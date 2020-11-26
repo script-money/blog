@@ -1,4 +1,4 @@
-baseURL = "https://blissful-fermat-fdbd81.netlify.app/"
+baseURL = "/"
 title = "脚本刷钱"
 theme = "github-style"
 copyright = "© 2020. Theme by <a href=\"https://github.com/MeiK2333/github-style\"><span>github-style</span></a>"

@@ -14,9 +14,10 @@ command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
 HUGO_VERSION = "0.78.2"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "https://blissful-fermat-fdbd81.netlify.app/*"
+  to = "https://www.script.money/:splat"
+  status = 301
+  force = true
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
