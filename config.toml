@@ -1,7 +1,7 @@
-baseURL = "https://script.money/"
-title = "GitHub Style"
+baseURL = "https://www.script.money/"
+title = "脚本刷钱"
 theme = "github-style"
-copyright = "© 2019. Theme by <a href=\"https://github.com/MeiK2333/github-style\"><span>github-style</span></a>"
+copyright = "© 2020. Theme by <a href=\"https://github.com/MeiK2333/github-style\"><span>github-style</span></a>"
 
 [params]
   author = "脚本刷钱"
@@ -9,5 +9,5 @@ copyright = "© 2019. Theme by <a href=\"https://github.com/MeiK2333/github-styl
   email = "hello@script.money"
   github = "script-money"
   avatar = "/avatar_box.png"
-  url = "https://script.money"
-  keywords = "script, automatic, scripts, 脚本, 自动化"
+  url = "https://www.script.money"
+  keywords = "script, automatic, scripts, 脚本, 自动化, 节点, node, 区块链, blockchain"
