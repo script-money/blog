@@ -1,7 +1,22 @@
 ---
 title: "About"
 date: 2020-11-23T19:43:42+08:00
-draft: true
+draft: false
 ---
 
-The robot army is already here—code lets you tell them what to do
+在这个软件吞噬的世界里，大多数的活动都能被软件替代。
+
+设计师设计了交互界面，让用户根据他们的想法去操作。
+
+但如果大多是重复操作，你就算再熟练也受限于时间。
+
+时间就是金钱，你需要学会使用工具来解放自己。
+
+本博客分享 **“用code和no-code工具解决重复问题”**。
+
+正如Naval的How to Get Rich (without getting lucky)所说：*“一支机器人大军是可以自由使用的——只是为了散热和空间效率，它被装在数据中心。使用它。”*
+{{< tweet 1002106977273565184 >}}
+
+也会包含加密货币、区块链的内容，它们会是下一代互联网，你能从中获取不菲收益。
+
+
