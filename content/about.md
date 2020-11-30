@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2020-11-23T19:43:42+08:00
-draft: false
+layout: "about"
 ---
 
 在这个软件吞噬的世界里，大多数的活动都能被软件替代。
