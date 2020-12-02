@@ -31,10 +31,12 @@ akash network是一个去中心化的云计算平台。用户可以以极低成�
 ![](referral%20Code.png)
 
 
-挑战一的流程攻略如下：
+挑战1-3的流程攻略如下：
 [Akash挑战1流程]({{< ref "/posts/006 akash_challenge1/index.md" >}} "akash_challenge1") 
 
 [Akash挑战2流程]({{< ref "/posts/007 akash_challenge2/index.md" >}} "akash_challenge2") 
+
+[Akash挑战3流程]({{< ref "/posts/008 akash_challenge3/index.md" >}} "akash_challenge3") 
 
 节点部署流程攻略如下：
 [Akash节点部署流程(待完成)]({{< ref "/posts/005 akash_node/index.md" >}} "akash_node") 
