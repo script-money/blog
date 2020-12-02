@@ -51,7 +51,6 @@ CODE=填你自己的
 ```
 
 DSL文件可去 GitHub 的 ovrclk/docs 库获取 https://github.com/ovrclk/docs/blob/master/testnet-challenges/deploy-1-3.yaml
-![](docs.png)
 
 部署完成是个akash节点，如图刚弄好同步了8个块
 ![](akash单节点.png)
