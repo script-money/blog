@@ -24,11 +24,18 @@ akash network是一个去中心化的云计算平台。用户可以以极低成�
 2. 需要熟练操作Linux，部署节点时需要。操作钱包最好也在VPS上进行。
 3. 需要熟练使用Github，知道如何fork，clone，commit，push和pull request。提交成果的方式是pull request。
 
+一开始需要从[官网](https://app.akash.network/signup?ref=c8xse9yeozxk71z)右上角注册，referral Code 邀请码可填写我的
+
+**c8xse9yeozxk71z**
+
+![](referral%20Code.png)
+
+
 挑战一的流程攻略如下：
 [Akash挑战1流程]({{< ref "/posts/006 akash_challenge1/index.md" >}} "akash_challenge1") 
 
-节点部署流程攻略如下：
-[Akash节点部署流程]({{< ref "/posts/005 akash_node/index.md" >}} "akash_node") 
+[Akash挑战2流程]({{< ref "/posts/007 akash_challenge2/index.md" >}} "akash_challenge2") 
 
-一开始需要从[官网](https://app.akash.network/signup?ref=c8xse9yeozxk71z)右上角注册，邀请码可填写我的
-`c8xse9yeozxk71z`
+节点部署流程攻略如下：
+[Akash节点部署流程(待完成)]({{< ref "/posts/005 akash_node/index.md" >}} "akash_node") 
+

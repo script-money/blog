@@ -125,3 +125,7 @@ make install # 大概等2分钟
 
 ## 疑难解答
 有问题可以直接在该博客下面留言，或者去官方discord查看历史记录是否有类似错误
+
+## 挑战2
+挑战2的流程攻略如下：
+[Akash挑战2流程]({{< ref "/posts/007 akash_challenge2/index.md" >}} "akash_challenge2") 
