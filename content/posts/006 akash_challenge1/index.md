@@ -8,7 +8,7 @@ tags: ["Akash"]
 > 建议官方文档为主，本文为辅。
 
 ## 查看活动进度
-进行前可先看看该[页面](https://github.com/ovrclk/ecosystem/pulls?page=3&q=is%3Apr+is%3Aopen)，如果 **没有超过200** 提交都还有机会。如图目前有113人提交了成果。
+进行前可先看看该[页面](https://github.com/ovrclk/ecosystem/pulls?page=3&q=is%3Apr+is%3Aopen)，~~如果 **没有超过200** 提交都还有机会~~，超过200也可以试试，因为有人是3个任务都单独提pr，有人1个pr里有3次提交。如图目前有113人提交了成果。
 ![pr113](pr113.png)
 
 ## 设置变量
@@ -82,6 +82,7 @@ make install # 大概等2分钟
 根据教程，用 echo 命令检查变量是否有输出。有的变量输出为空就填入.bashrc
 ![](./variable2.png)
 
+> [Akash挑战3流程]({{< ref "/posts/008 akash_challenge3/index.md" >}} "akash_challenge3") 有完整的shell指令可以直接复制
 ## 创建部署配置文件
 创建复制网页上的 deploy.yml 到本地，一行都不用改。也可以用`curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml`直接下载。
 > 如果是部署自己的web应用就需要做修改，类似docker镜像的部署，属于其中一个开放挑战的任务的要求。
