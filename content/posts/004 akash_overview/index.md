@@ -39,6 +39,9 @@ akash network是一个去中心化的云计算平台。用户可以以极低成�
 
 [Akash挑战3流程]({{< ref "/posts/008 akash_challenge3/index.md" >}} "akash_challenge3") 
 
+[Akash DeCloud部署Uniswap]({{< ref "/posts/009 akash_deploy_uniswap/index.md" >}} "Akash DeCloud部署Uniswap") 
+
+
 节点部署流程攻略如下：
 [Akash节点部署流程(待完成)]({{< ref "/posts/005 akash_node/index.md" >}} "akash_node") 
 
