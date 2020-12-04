@@ -1,6 +1,7 @@
 ---
 title: "Akash DeCloud部署Uniswap"
 date: 2020-12-03T17:38:54+08:00
+lastmod: 2020-12-04T22:10:00+08:00
 draft: false
 summary: "介绍在akash上部署Uniswap，其他WebApp类似"
 tags: ["Akash"]
@@ -27,7 +28,9 @@ docker不熟悉的话，强烈建议先看看[《30 分钟快速入门 Docker �
 
 ## 打包Uniswap
 
-访问 https://github.com/Uniswap/uniswap-interface，查看README，就两步 `yarn` 和 `yarn start`。
+访问 https://github.com/Uniswap/uniswap-interface 
+
+查看README就两步 `yarn` 和 `yarn start`。
 
 先 git clone 该库到本地，使用 `--depth=1` 可以加快下载速度。`--config http.proxy=localhost:8123`是我本机设置的代理，请忽略。
 
@@ -45,7 +48,7 @@ docker不熟悉的话，强烈建议先看看[《30 分钟快速入门 Docker �
 ## 制作本地镜像
 
 
-制作镜像也有多种方式，如果使用自动化部署和打包，通常是在镜像A中去编译，再拷贝到镜像B中运行。如下面Dockerfile中注释内的内容。
+制作镜像也有多种方式，如果使用自动化部署，通常是在镜像A中去编译，再拷贝到镜像B中运行。如下面Dockerfile中注释了的内容。
 
 ```Dockerfile
 # # 编译镜像
@@ -86,7 +89,7 @@ CMD ["nginx", "-g", "daemon off;"]
 10. 标记内部运行的是80端口
 11. 用 nginx -g daemon off; 运行nginx
     
-也可以使用本地build好的文件复制到nginx里直接运行。我采取第二种方式。
+也可以使用本地build好的文件复制到nginx里直接运行（上面Dockerfile中没注释的部分）。下文采取此方式。
 
 在Uniswap文件夹下新建一个名为 Dockerfile 的文件。（走流程1还需要新建一个.dockerignore添加 node_modules/ 和 build/ 防止COPY这两个文件夹进编译镜像）
 
