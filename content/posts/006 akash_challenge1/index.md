@@ -1,6 +1,7 @@
 ---
 title: "Akash挑战1流程"
 date: 2020-12-01T21:00:00+08:00
+lastmod: 2020-12-04T19:16:47+08:00
 draft: false
 summary: "介绍挑战1部署webapp的流程"
 tags: ["Akash"]
@@ -10,6 +11,8 @@ tags: ["Akash"]
 ## 查看活动进度
 进行前可先看看该[页面](https://github.com/ovrclk/ecosystem/pulls?page=3&q=is%3Apr+is%3Aopen)，~~如果 **没有超过200** 提交都还有机会~~，超过200也可以试试，因为有人是3个任务都单独提pr，有人1个pr里有3次提交。如图目前有113人提交了成果。
 ![pr113](pr113.png)
+
+12月4日已经开始结算了，应该来不及了，准备第二周的节点活动吧。做节点也需要安装akash节点，下面的内容依然有用。
 
 ## 设置变量
 [点此进入官方文档](https://docs.akash.network/guides/version)
@@ -45,7 +48,7 @@ sudo mv go /usr/local
 然后添加以下环境变量进 `~/.bashrc`，然后运行`source ~/.bashrc`
 ```
 export GOROOT=/usr/local/go
-export GOPATH=/home/ubuntu/go # root账号就是/root/go
+export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 ```
 最后运行 `go version` 查看结果，正常显示版本安装成功。
