@@ -9,6 +9,9 @@ summary: "介绍节点部署流程，避免一些坑，简化一些操作"
 # Akash节点部署流程
 
 介绍节点部署流程，让大家避免一些坑，简化一些操作。建议配合[官方文档](https://docs.akash.network/guides/node)阅读。
+
+b站视频教程 [「akash节点部署视频流程」](https://www.bilibili.com/video/BV1Zz4y1k7FF/)，大佬可无视。新手建议看一遍视频。
+
 ## 整体流程
 
 租服务器——设置变量——安装Go——编译源码——配置节点——启动节点——配置验证人
@@ -90,7 +93,7 @@ make install # 等最多5分钟
 1. 修改AKASH_MONIKER的名字为你的节点名（把下面指令里的“输入你的节点名”改为你想要的名字）
 
 ```bash
-echo AKASH_MONIKER="输入你的节点名" >> ~/.bashrc`
+echo AKASH_MONIKER="输入你的节点名" >> ~/.bashrc
 source ~/.bashrc
 akash init "$AKASH_MONIKER"
 ```
