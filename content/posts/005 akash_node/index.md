@@ -101,13 +101,11 @@ akash init "$AKASH_MONIKER"
 sed -i '11cmin-gas-prices = "0.025uakt"' ~/.akash/config/app.toml
 ```
 
-3. 下载创世配置文件。
+3. 下载创世配置文件。运行完输入`cat $HOME/.akash/config/genesis.json`看一下是否有结果。如果没结果，很可能是国内服务器可能访问不到，手动下载到对应文件夹 https://raw.githubusercontent.com/ovrclk/net/master/edgenet/genesis.json
 
 ```bash
 curl -s "$AKASH_NET/genesis.json" > $HOME/.akash/config/genesis.json
 ```
-
-运行完输入`cat $HOME/.akash/config/genesis.json`看一下是否有结果。如果没结果，很可能是国内服务器可能访问不到，手动下载到对应文件夹 https://raw.githubusercontent.com/ovrclk/net/master/edgenet/genesis.json
 
 4. 添加seed。~/.akash/config/config.toml 的184行添加节点信息。
 
