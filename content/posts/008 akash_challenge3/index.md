@@ -1,6 +1,7 @@
 ---
-title: "Akash挑战3流程"
+title: "Akash挑战3流程（已结束）"
 date: 2020-12-03T0:00:00+08:00
+lastmod: 2020-12-05T16:00:00+08:00
 draft: false
 summary: "介绍挑战3部署akash单节点"
 tags: ["Akash"]

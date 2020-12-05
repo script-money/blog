@@ -1,6 +1,7 @@
 ---
-title: "Akash挑战2流程"
+title: "Akash挑战2流程（已结束）"
 date: 2020-12-02T8:00:00+08:00
+lastmod: 2020-12-05T16:00:00+08:00
 draft: false
 summary: "介绍挑战2部署带数据库的webapp的流程"
 tags: ["Akash"]
