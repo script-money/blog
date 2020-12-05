@@ -1,7 +1,7 @@
 ---
-title: "Akash挑战1流程"
+title: "Akash挑战1流程（已结束）"
 date: 2020-12-01T21:00:00+08:00
-lastmod: 2020-12-04T19:16:47+08:00
+lastmod: 2020-12-05T16:00:00+08:00
 draft: false
 summary: "介绍挑战1部署webapp的流程"
 tags: ["Akash"]
