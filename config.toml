@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "/"
 relativeURLs = "True"
 title = "脚本刷钱"
 theme = "github-style"
