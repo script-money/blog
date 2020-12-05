@@ -1,7 +1,7 @@
 ---
 title: "Akash节点部署流程"
-date: 2020-12-01T21:00:00+08:00
-lastmod: 2020-12-05T12:16:00+08:00
+date: 2020-12-05T12:16:00+08:00
+lastmod: 2020-12-05T16:09:00+08:00
 draft: false
 tags: ["Akash"]
 summary: "介绍节点部署流程，避免一些坑，简化一些操作"
@@ -87,40 +87,50 @@ make install # 等最多5分钟
 
 参考官方文档 [Run an Akash Node](https://docs.akash.network/guides/node)
 
-1. 修改AKASH_MONIKER的名字为你的节点名（把下面指令里的script.money改为你想要的名字）
+1. 修改AKASH_MONIKER的名字为你的节点名（把下面指令里的“输入你的节点名”改为你想要的名字）
 
-> `echo AKASH_MONIKER="script.money" >> ~/.bashrc`
-> 
-> `source .bashrc`
-> 
-> `akash init "$AKASH_MONIKER"`
+```bash
+echo AKASH_MONIKER="输入你的节点名" >> ~/.bashrc`
+source ~/.bashrc
+akash init "$AKASH_MONIKER"
+```
 
 2. 修改 `~/.akash/config/app.toml` 中的11行 min-gas-prices = "0.025uakt"
 
-> `sed -i '11cmin-gas-prices = "0.025uakt"' ~/.akash/config/app.toml`
+```bash
+sed -i '11cmin-gas-prices = "0.025uakt"' ~/.akash/config/app.toml
+```
 
 3. 下载创世配置文件。
 
-> `curl -s "$AKASH_NET/genesis.json" > $HOME/.akash/config/genesis.json`
+```bash
+curl -s "$AKASH_NET/genesis.json" > $HOME/.akash/config/genesis.json
+```
 
-运行完输入`cat $HOME/.akash/config/genesis.json`看一下是否有结果。如果没结果，国内服务器可能访问不到，手动复制添加 https://raw.githubusercontent.com/ovrclk/net/master/edgenet/genesis.json
+运行完输入`cat $HOME/.akash/config/genesis.json`看一下是否有结果。如果没结果，很可能是国内服务器可能访问不到，手动下载到对应文件夹 https://raw.githubusercontent.com/ovrclk/net/master/edgenet/genesis.json
 
-4. 添加seed
+4. 添加seed。~/.akash/config/config.toml 的184行添加节点信息。
 
-> `sed -i '184cseeds = "d540f54a920e3d58c13a5908c5f6ea2160bcf7b2@edgenet-01.akashtest.net:26686,3f843ee34582c4181f00c02643b4b53bb830c3a8@edgenet-02.akashtest.net:26686,22f70903b004a56a650c9478989230b4a771ee5a@edgenet-03.akashtest.net:26686,6390b433ff3036e7fa6fd9188c9679026fe2bbcc@edgenet-04.akashtest.net:26686,f097db8b1be940dbcba0970fcbe96085308b3803@95.216.20.181:26656,447766779a8b5b594b1e38cb51bf5c2e6e121e78@62.171.162.251:29956,2bea671ce7de988b137384c8e29c337d10cc4c37@173.212.203.238:46656"' ~/.akash/config/config.toml`
+```bash
+sed -i '184cseeds = "d540f54a920e3d58c13a5908c5f6ea2160bcf7b2@edgenet-01.akashtest.net:26686,3f843ee34582c4181f00c02643b4b53bb830c3a8@edgenet-02.akashtest.net:26686,22f70903b004a56a650c9478989230b4a771ee5a@edgenet-03.akashtest.net:26686,6390b433ff3036e7fa6fd9188c9679026fe2bbcc@edgenet-04.akashtest.net:26686,f097db8b1be940dbcba0970fcbe96085308b3803@95.216.20.181:26656,447766779a8b5b594b1e38cb51bf5c2e6e121e78@62.171.162.251:29956,2bea671ce7de988b137384c8e29c337d10cc4c37@173.212.203.238:46656"' ~/.akash/config/config.toml
+```
 
 5. 修改 `~/.akash/config/config.toml` 中的23行为fast_sync = true
 
-> `sed -i '23cfast_sync = true' ~/.akash/config/config.toml`
+```bash
+sed -i '23cfast_sync = true' ~/.akash/config/config.toml
+```
 
 6. 修改 `~/.akash/config/config.toml` 中的308行为 v0 改为 v2
 
-> `sed -i '308s/v0/v2/g' ~/.akash/config/config.toml`
+```bash
+sed -i '308s/v0/v2/g' ~/.akash/config/config.toml
+```
 
 7. 配置systemd
 
-创建启动守护配置文件，注意User、WorkingDirectory、ExecStart的路径改成你对应的路径
-```
+创建启动守护配置文件，注意8-10行的User、WorkingDirectory、ExecStart的路径改成你对应的路径
+```shell
 echo '
 [Unit]
 Description=Cosmos akash Node
@@ -142,15 +152,21 @@ WantedBy=multi-user.target
 
 重新加载systemd
 
-`sudo systemctl daemon-reload`
+```bash
+sudo systemctl daemon-reload
+```
 
 配置journald
 
-`sed -i 's/#Storage=auto/Storage=persistent/g' /etc/systemd/journald.conf`
+```bash
+sed -i 's/#Storage=auto/Storage=persistent/g' /etc/systemd/journald.conf
+```
 
 重新加载journald配置
 
-`systemctl restart systemd-journald`
+```bash
+systemctl restart systemd-journald
+```
 
 
 ## 配置不同种类的节点
@@ -159,13 +175,17 @@ WantedBy=multi-user.target
 如果是配置RPC节点:
 修改`~/.akash/config/config.toml`中的91行的laddr的值laddr = "tcp://0.0.0.0:26657"
 
-> `sed -i '91claddr = "tcp://0.0.0.0:26657"' ~/.akash/config/config.toml`
+```bash
+sed -i '91claddr = "tcp://0.0.0.0:26657"' ~/.akash/config/config.toml
+```
 
 ### API
 
 如果是配置API节点，`~/.akash/config/app.toml`中的104行api的enable false 改为 true
 
-> `sed -i '104s/false/true/g' ~/.akash/config/app.toml`
+```bash
+sed -i '104s/false/true/g' ~/.akash/config/app.toml
+```
 
 ### Validator
 
@@ -192,7 +212,7 @@ WantedBy=multi-user.target
 
 同步时，先配置一个钱包，参考 [Akash挑战1流程（已结束）]({{< ref "/posts/006 akash_challenge1/index.md" >}} "akash_challenge1") 和 [Akash挑战3流程（已结束）]({{< ref "/posts/008 akash_challenge3/index.md" >}} "akash_challenge3") 
 
-配置完成后，你的.bashrc中应该有 KEY_NAME 和 ACCOUNT_ADDRESS 变量。且输入
+配置完成后，你的 .bashrc 中应该有 KEY_NAME 和 ACCOUNT_ADDRESS 变量。且输入
 `akash --node "$AKASH_NODE" query bank balances "$ACCOUNT_ADDRESS"` 有100000000左右的uakt。
 
 输入`akash tendermint show-validator`，会在 `~/.akash/config/priv_validator_key.json` 生成验证人私钥。
