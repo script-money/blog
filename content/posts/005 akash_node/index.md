@@ -1,7 +1,7 @@
 ---
 title: "Akash节点部署流程"
 date: 2020-12-05T12:16:00+08:00
-lastmod: 2020-12-05T16:09:00+08:00
+lastmod: 2020-12-07T22:00:00+08:00
 draft: false
 tags: ["Akash"]
 summary: "介绍节点部署流程，避免一些坑，简化一些操作"
@@ -34,14 +34,14 @@ RPC和API节点，配置用 1核CPU/1GB RAM/25GB SSD，公网IP。
 
 ```bash
 AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/edgenet"
-AKASH_VERSION="v0.9.0-rc11"
+AKASH_VERSION="v0.9.0-rc13"
 AKASH_CHAIN_ID="akash-edgenet-1"
 AKASH_NODE="tcp://rpc-edgenet.akashdev.net:26657"
 ```
 或者运行以下命令
 ```bash
 echo 'AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/edgenet"
-AKASH_VERSION="v0.9.0-rc11"
+AKASH_VERSION="v0.9.0-rc13"
 AKASH_CHAIN_ID="akash-edgenet-1"
 AKASH_NODE="tcp://rpc-edgenet.akashdev.net:26657"' >> ~/.bashrc
 source ~/.bashrc
@@ -57,13 +57,13 @@ source ~/.bashrc
 ```bash
 sudo apt-get update # Centos用yum update && yum install gcc
 sudo apt-get -y upgrade
-sudo apt install build-essential
+sudo apt install build-essential -y
 ```
 
 下载golang1.15.5
 ```bash
 wget https://dl.google.com/go/go1.15.5.linux-amd64.tar.gz # 下载包，国内服务器可能无法下载，可以手动下载后上传
-sudo tar -xvf go1.15.5.linux-amd64.tar.gz  # 解压包
+tar -xvf go1.15.5.linux-amd64.tar.gz  # 解压包
 sudo mv go /usr/local
 ```
 
@@ -85,6 +85,8 @@ make deps-install # 可能需要apt install build-essential或yum instal gcc
 make install # 等最多5分钟
 ```
 编译完成后输入 `akash` 有输出，说明节点程序可使用。
+
+> 注意：第二周任务已经更新，如果只是参加挑战任务部署SDL，后面都可以跳过了。接着参考 [Akash挑战1流程（已结束）]({{< ref "/posts/006 akash_challenge1/index.md" >}} "akash_challenge1") 去生成钱包，发送SDL文件。
 
 ## 配置文件
 
