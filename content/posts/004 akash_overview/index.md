@@ -1,7 +1,7 @@
 ---
 title: "Akash三阶段活动介绍"
 date: 2020-12-01T21:00:00+08:00
-lastmod: 2020-12-05T11:52:00+08:00
+lastmod: 2020-12-07T22:00:00+08:00
 draft: false
 summary: "奖励很丰厚，预计能获得几千到上万元的AKT"
 tags: ["Akash"]
@@ -16,11 +16,11 @@ akash network是一个去中心化的云计算平台。用户可以以极低成�
 
 每个挑战持续56小时，奖励150-250AKT代币，约¥650-¥1100左右。全部完成还有额外奖励。
 
-如果和第一周一样的话，每天的提交北京时间8号凌晨1点开始，按commit的时间戳计算。任务会提前发布，可以晚上弄完，凌晨1点commit了就去睡觉。
+和第一周一样的话，每天的提交北京时间8号凌晨1点开始，按commit的时间戳计算。任务会提前发布，可以晚上弄完，凌晨1点commit了就去睡觉。
 
 ![](time.png)
 
-第一个任务部署API节点（提供http查询）。
+第一个任务部署API节点（提供http查询）。是用akash on akash的SDL去部署，然后提交json。
 
 第二个任务部署RPC节点（提供链上查询和同步）。
 
@@ -55,8 +55,11 @@ akash network是一个去中心化的云计算平台。用户可以以极低成�
 
 [Akash DeCloud部署Uniswap]({{< ref "/posts/009 akash_deploy_uniswap/index.md" >}} "Akash DeCloud部署Uniswap") 
 
-第二周任务提交方法还未知，可先按照下面的节点部署流程练习部署：
+第二周任务提交方法和第一周一样，如果本机是Mac，本地用brew安装钱包就行；如果不是，可先按照下面的节点部署流程练习部署，之后在节点上操作钱包：
 
 节点部署流程攻略如下：
 [Akash节点部署流程]({{< ref "/posts/005 akash_node/index.md" >}} "akash_node") 
+
+第二周挑战1-3的流程攻略如下：
+[Akash第二周挑战1流程（待完成）]({{< ref "/posts/011 akash_challenge4/index.md" >}} "akash_challenge4") 
 
