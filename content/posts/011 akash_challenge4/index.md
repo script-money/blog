@@ -1,7 +1,7 @@
 ---
 title: "Akash第二周挑战1流程"
 date: 2020-12-07T21:00:00+08:00
-lastmod: 2020-12-07T23:00:00+08:00
+lastmod: 2020-12-08T08:00:00+08:00
 draft: false
 summary: "介绍第二周挑战1部署API节点流程"
 tags: ["Akash"]
@@ -36,3 +36,13 @@ Mac的更新方式是 `brew upgrade akash-edge`
 更新完成后用 `akash version` 确认下
 
 剩下步骤其他和第一周一样。生成json提交到ecosystem库，提pull request就行了。 参考 [Akash挑战1流程（已结束）]({{< ref "/posts/006 akash_challenge1/index.md" >}} "akash_challenge1") 
+
+在ecosystem库，push时可能需要先merge源远程分支，可以用以下命令：添加源主分支，拉到本地的master，然后合并该master
+
+```
+git remote add source https://github.com/ovrclk/ecosystem.git
+git fetch source master
+git merge source/master
+```
+
+![](merge.png)
