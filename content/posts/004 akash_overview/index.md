@@ -1,7 +1,7 @@
 ---
 title: "Akash三阶段活动介绍"
 date: 2020-12-01T21:00:00+08:00
-lastmod: 2020-12-07T22:00:00+08:00
+lastmod: 2020-12-09T22:15:00+08:00
 draft: false
 summary: "奖励很丰厚，预计能获得几千到上万元的AKT"
 tags: ["Akash"]
@@ -60,6 +60,11 @@ akash network是一个去中心化的云计算平台。用户可以以极低成�
 节点部署流程攻略如下：
 [Akash节点部署流程]({{< ref "/posts/005 akash_node/index.md" >}} "akash_node") 
 
-第二周挑战1-3的流程攻略如下：
-[Akash第二周挑战1流程（待完成）]({{< ref "/posts/011 akash_challenge4/index.md" >}} "akash_challenge4") 
+第二周挑战1（挑战4）的流程攻略如下：
+[Akash第二周挑战1流程（已结束）]({{< ref "/posts/011 akash_challenge4/index.md" >}} "akash_challenge4") 
 
+第二周挑战2（挑战5）的流程攻略如下：
+[Akash第二周挑战2流程]({{< ref "/posts/012 akash_challenge5/index.md" >}} "akash_challenge5") 
+
+第二周挑战3（挑战6）的流程攻略如下：
+[Akash第二周挑战3流程]({{< ref "/posts/013 akash_challenge6/index.md" >}} "akash_challenge6") 
