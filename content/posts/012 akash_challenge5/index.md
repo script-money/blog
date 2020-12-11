@@ -1,7 +1,7 @@
 ---
-title: "Akash第二周挑战2流程"
+title: "Akash第二周挑战2流程（已结束）"
 date: 2020-12-09T01:00:00+08:00
-lastmod: 2020-12-09T11:15:00+08:00
+lastmod: 2020-12-12T00:21:00+08:00
 draft: false
 summary: "介绍第二周挑战2部署RPC节点流程"
 tags: ["Akash"]

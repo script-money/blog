@@ -67,7 +67,7 @@ akash network是一个去中心化的云计算平台。用户可以以极低成�
 [Akash第二周挑战2流程（已结束）]({{< ref "/posts/012 akash_challenge5/index.md" >}} "akash_challenge5") 
 
 第二周挑战3（挑战6）的流程攻略如下：
-[Akash第二周挑战3流程（已结束）]({{< ref "/posts/013 akash_challenge6/index.md" >}} "akash_challenge6") 
+[Akash第二周挑战3流程]({{< ref "/posts/013 akash_challenge6/index.md" >}} "akash_challenge6") 
 
 开放任务 DeCloud for no-DeFi Rewards 的参考：
 [akash decloud 上部署 hugo 博客教程]({{< ref "/posts/016 deploy_hugo_on_akash/index.md" >}} "akash decloud 上部署 hugo 博客教程") 

@@ -1,7 +1,7 @@
 ---
 title: "Akash第二周挑战3流程"
 date: 2020-12-09T22:00:00+08:00
-lastmod: 2020-12-10T01:37:00+08:00
+lastmod: 2020-12-12T00:21:00+08:00
 draft: false
 summary: "介绍第二周挑战3部署验证节点流程"
 tags: ["Akash"]
