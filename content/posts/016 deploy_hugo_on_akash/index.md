@@ -3,7 +3,7 @@ title: "akash decloud 上部署 hugo 博客教程"
 date: 2020-12-11T18:00:00+08:00
 lastmod: 2020-12-11T24:00:00+08:00
 draft: false
-summary: ""
+summary: "多阶段打包部署hugo博客并更新"
 tags: ["Akash"]
 ---
 

@@ -9,6 +9,7 @@
 # to work around segmentation fault issues.
 FROM golang:1.13-alpine
 ARG HUGO_VERSION=0.78.2
+ARG HUGO=hugo
 ARG HUGO_SHA=6c139580bf42dd66615f61cb33d62fc47cb855790d744050d78924bf1f48df0d
 ARG HUGO_EXTENDED_SHA=26410c5ddf2124d6d99b3d0ee00dcae1e16c1a3ccb9feae025d76c0f3c04745e
 RUN set -eux && \
