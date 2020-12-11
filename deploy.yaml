@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   web:
-    image: scriptmoney/blog:20201211
+    image: scriptmoney/blog:20201212
     env:
       - BASEURL=akash.script.money
     expose:

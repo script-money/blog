@@ -17,22 +17,22 @@ SERVICE_NAME=
 # 1. 发起部署交易，注意改yml文件
 # akash tx deployment create $DEPLOY_YML --from $KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID  --fees 50000uakt -y
 
-# 2. 查询部署的镜像列表，需要等会儿，输出的PROVIDER和DSEQ后修改上方的变量
+# 2. 查询部署的租约列表，需要等会儿，输出的PROVIDER和DSEQ后修改上方的变量
 # akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE --state active
 
-# # 3. 上传部署许可，无输出
-# akash provider send-manifest $DEPLOY_YML --node $AKASH_NODE --dseq $DSEQ \
-# --oseq $OSEQ --gseq $GSEQ --owner $ACCOUNT_ADDRESS --provider $PROVIDER
+# # 3. 发送配置文件，无输出
+akash provider send-manifest $DEPLOY_YML --node $AKASH_NODE --dseq $DSEQ \
+--oseq $OSEQ --gseq $GSEQ --owner $ACCOUNT_ADDRESS --provider $PROVIDER
 
-# 4. 查询单个部署许可的状态，可获得服务web地址
-# akash provider lease-status --node $AKASH_NODE --dseq $DSEQ --oseq $OSEQ \
-# --gseq $GSEQ --provider $PROVIDER --owner $ACCOUNT_ADDRESS
+# 4. 查询单个部署租约的状态，可获得服务web地址
+akash provider lease-status --node $AKASH_NODE --dseq $DSEQ --oseq $OSEQ \
+--gseq $GSEQ --provider $PROVIDER --owner $ACCOUNT_ADDRESS
 
 # 5. 获取要提交的json
 # akash query market lease get --dseq $DSEQ --gseq $GSEQ --oseq $OSEQ \
 #  --provider $PROVIDER --owner $ACCOUNT_ADDRESS --node $AKASH_NODE -o json > $CODE.json
 
-# 更新部署
+# 发送更新部署
 # akash tx deployment update $DEPLOY_YML --dseq $DSEQ --from $KEY_NAME --owner $ACCOUNT_ADDRESS \
 #  --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID  --fees 50000uakt
 
