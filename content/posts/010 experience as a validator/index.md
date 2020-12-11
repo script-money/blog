@@ -3,7 +3,7 @@ title: "I am confused as a validator on Akash's Testnet"
 date: 2020-12-04T20:20:00+08:00
 lastmod: 2020-12-04T20:20:00+08:00
 draft: false
-summary: "For Community Content Submission"
+summary: "Confused experience as validator"
 tags: ["Akash"]
 ---
 

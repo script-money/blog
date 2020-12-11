@@ -1,7 +1,7 @@
 ---
-title: "Akash第二周挑战1流程"
+title: "Akash第二周挑战1流程（已结束）"
 date: 2020-12-07T21:00:00+08:00
-lastmod: 2020-12-08T08:00:00+08:00
+lastmod: 2020-12-12T00:21:00+08:00
 draft: false
 summary: "介绍第二周挑战1部署API节点流程"
 tags: ["Akash"]

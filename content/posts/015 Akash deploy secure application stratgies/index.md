@@ -3,7 +3,7 @@ title: "Akash deploy secure application stratgies"
 date: 2020-12-10T17:00:00+08:00
 lastmod: 2020-12-11T10:45:00+08:00
 draft: false
-summary: "For Community Content Submission"
+summary: "include build Container & write SDL file"
 tags: ["Akash"]
 ---
 
@@ -19,9 +19,9 @@ There are some other security stratgies, including build containers and write SD
 
 Some popular images like "From Node"  is actually based on a fully installed Debian distribution, which means that the container image will contain a complete operating system, which has many vulnerabilities in their system libraries. You prefer use them as building container,then copy neccessary file to alpline-base images as running container. 
 
-### use multi-statge builds for small secure images
+### use multi-stage builds for small secure images
 
-When using Dockerfile to build application container images, it generates many image layers that are only needed for build time, including development tools and libraries needed for compilation, dependencies, temporary files, confidential information needed to run unit tests, and so on. For minimizing the attack surface for bundled docker image dependencies, you should use multi-statge builds for small and secure image.
+When using Dockerfile to build application container images, it generates many image layers that are only needed for build time, including development tools and libraries needed for compilation, dependencies, temporary files, confidential information needed to run unit tests, and so on. For minimizing the attack surface for bundled docker image dependencies, you should use multi-stage builds for small and secure image.
 
 ### least privileged user
 

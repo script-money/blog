@@ -3,7 +3,7 @@ title: "为什么去中心化云对于工业界很重要"
 date: 2020-12-10T13:50:00+08:00
 lastmod: 2020-12-10T16:30:00+08:00
 draft: false
-summary: "For Community Content Submission"
+summary: "akash Decloud 对区块链和云计算意义重大"
 tags: ["Akash"]
 ---
 
