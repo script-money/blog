@@ -81,7 +81,7 @@ services:
 
 ![](no_base_url.png)
 
-原因是我的baseURL设置的是CNAME的域名。
+原因是 baseURL 设置的是 CNAME 的域名。
 
 ![](error_base_url.png)
 
@@ -96,16 +96,14 @@ services:
 
 ## 更新博客
 
-先打包镜像推到仓库，然后用以下命令让 provider 重新部署。
-
-dseq保持不变，如有必要，可更新下DEPLOY_YML。
+先打包镜像 tag 换一下，推到仓库，用以下命令让 provider 重新部署。dseq保持不变，如有必要，可更新下DEPLOY_YML。
 
 ```
 akash tx deployment update $DEPLOY_YML --dseq $DSEQ --from $KEY_NAME --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID  --fees 50000uakt
 ```
 
-然后重新发送manifest
+重新发送manifest：
 
 ```
 akash provider send-manifest $DEPLOY_YML --node $AKASH_NODE --dseq $DSEQ \
@@ -113,3 +111,5 @@ akash provider send-manifest $DEPLOY_YML --node $AKASH_NODE --dseq $DSEQ \
 ```
 
 就可以在地址不变情况下更新部署内容了。
+
+整个更新流程可以脚本自动化，有兴趣的朋友可自己尝试。
