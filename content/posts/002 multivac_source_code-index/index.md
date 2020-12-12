@@ -7,6 +7,8 @@ tags: ["MultiVAC"]
 summary: "官方发布的源码概述翻译，帮助开发者阅读代码"
 ---
 
+# MultiVAC源码解析——概述
+
 > 原文链接 [MultiVAC Open Source Code Overview](https://multivac-global.medium.com/multivac-open-source-code-overview-7977ae18905c)
 
 ## 部分
@@ -92,11 +94,11 @@ MultiVAC 的实现以比特币代码为参考。连接管理器、地址管理�
 
 同时，要注意区块是否由这个分片产生的，对于当前分片的区块和其他分片的区块的处理是不同的。
 
-以下是矿工节点的交易处理流程。
+以下是矿工节点的交易处理流程：
 
 ![](miner_transaction.png)
 
-下面是矿工节点区块处理的流程。
+下面是矿工节点区块处理的流程：
 
 ![](miner_block.png)
 
