@@ -17,12 +17,12 @@ tags: ["Linux"]
 
 安装时遇到的第一个问题是，在Windows商店下载东西太慢了。下面介绍一个途径可以快速下载安装 WSL 和 Windows terminal。
 
-用bing搜索 `Windows Terminal`，进入 *购买 Windows Terminal*的[链接](https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701)。复制该链接。
+用 bing.com 搜索 `Windows Terminal`，进入 *购买 Windows Terminal* 的[链接](https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701)。复制该链接。
 
-打开网站 https://store.rg-adguard.net/ ，选择link，复制上面的链接
+打开网站 https://store.rg-adguard.net/ ，选择link，粘贴上面的链接，如下图。
 
 ![store_page](download_appx.png)
 
 点下面的链接下载即可。
 
-同理搜索下载 [ubuntu](https://www.microsoft.com/zh-cn/p/ubuntu/9nblggh4msv6)
+[ubuntu](https://www.microsoft.com/zh-cn/p/ubuntu/9nblggh4msv6) 同理搜索下载。
