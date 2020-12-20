@@ -11,11 +11,11 @@ tags: ["node"]
 
 活动开始时间是北京时间2020年12月21日20:00，持续两周，预计有100刀的 STX 奖励。（根据挖矿效率和参与人数而定）
 
-先点击 [活动报名页面链接](https://daemontechnologies.co/minestx-challenge-zh) 报名
+先点击 [活动报名页面链接](https://daemontechnologies.co/minestx-challenge-zh) 报名，最好用英文页面去报名。中文页面报名得到的邮件不显示BTC地址，最后领奖可能需要联系官方解决。
 
-需要生成地址，具体生成方式参考[该视频](https://www.youtube.com/watch?v=82b8PGoQYpI)。如果在本机生成遇到困难，可以先看后面，在服务器上去生成。
+需要生成地址，具体生成方式参考[该视频](https://www.youtube.com/watch?v=82b8PGoQYpI)。如果在本机生成遇到困难，可以先看后面，在服务器上去生成。或者设置npm镜像，参考[该文章](https://segmentfault.com/a/1190000027083723)
 
-有两个测试网 krypton 和 xenon ，一阶段活动是 krypton，使用的软件版本是 24.0.0.0-xenon，自己看文档的大佬别挖错了。
+有两个测试网 krypton 和 xenon ，目前一阶段活动是 krypton，使用的软件版本是 24.0.0.0-xenon，自己看文档的大佬别挖错了。
 
 有两种挖矿方式，租 VPS 或者 运行挖矿机器人。
 
