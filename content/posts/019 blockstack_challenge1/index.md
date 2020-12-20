@@ -15,6 +15,8 @@ tags: ["node"]
 
 需要生成地址，具体生成方式参考[该视频](https://www.youtube.com/watch?v=82b8PGoQYpI)。如果在本机生成遇到困难，可以先看后面，在服务器上去生成。注意要用 nodejs 14版本去生成。用低版本的 node 会遇到收到的报名邮件不显示BTC地址。
 
+有两个测试网 krypton 和 xenon ，一阶段活动是 krypton，使用的软件版本是 24.0.0.0-xenon，自己看文档的大佬别挖错了。
+
 有两种挖矿方式，租 VPS 或者 运行挖矿机器人。
 
 ## 租 VPS
@@ -46,7 +48,7 @@ wget https://github.com/blockstack/stacks-blockchain/releases/download/v24.0.0.0
 unzip linux-x64.zip
 ```
 
-在 blockstack 文件夹下创建挖矿配置文件 miner-config.toml，内容参考下面，注意第6行的seed要加上文章开头生成的地址里面的privateKey。
+在 blockstack 文件夹下创建挖矿配置文件 miner-config.toml，内容参考下面，注意第5行的 seed = "" 要在引号内加上文章开头生成的地址里面的privateKey。
 
 ```shell
 [node]
