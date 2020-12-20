@@ -1,7 +1,7 @@
 ---
 title: "STX 采矿挑战第一阶段教程"
 date: 2020-12-20T18:30:00+08:00
-lastmod: 2020-12-20T20:00:00+08:00
+lastmod: 2020-12-21T06:20:00+08:00
 draft: false
 summary: "对活动流程简介，帮读者排一些坑"
 tags: ["node"]
@@ -9,11 +9,13 @@ tags: ["node"]
 
 # STX 采矿挑战第一阶段教程
 
-活动开始时间是北京时间2020年12月21日20:00，持续两周，预计有100刀的 STX 奖励。（根据挖矿效率和参与人数而定）
+【12-21 06:00 更新：链又重启了，请重新去领BTC，然后重启节点】
+
+活动开始时间是北京时间2020年12月21日22:00，持续两周，预计有100刀的 STX 奖励。（根据挖矿效率和参与人数而定）
 
 先点击 [活动报名页面链接](https://daemontechnologies.co/minestx-challenge-zh) 报名，最好用英文页面去报名。中文页面报名得到的邮件不显示BTC地址，最后领奖可能需要联系官方解决。
 
-需要生成地址，具体生成方式参考[该视频](https://www.youtube.com/watch?v=82b8PGoQYpI)。如果在本机生成遇到困难，可以先看后面，在服务器上去生成。或者设置npm镜像，参考[该文章](https://segmentfault.com/a/1190000027083723)
+需要生成地址，具体生成方式参考[该视频](https://www.youtube.com/watch?v=82b8PGoQYpI)。如果在本机生成遇到困难，可以先看后面，在服务器上去生成。或者设置npm镜像，参考[该文章](https://segmentfault.com/a/1190000027083723)。或者加我微信 script-money 帮忙生成。
 
 有两个测试网 krypton 和 xenon ，目前一阶段活动是 krypton，使用的软件版本是 24.0.0.0-xenon，自己看文档的大佬别挖错了。
 
@@ -39,7 +41,7 @@ apt upgrade -y
 apt install unzip -y
 ```
 
-输入 `curl -sS -X POST https://stacks-node-api.krypton.blockstack.org/extended/v1/faucets/btc?address=YOURBTCADDRESS` 领测试的BTC，YOURBTCADDRESS 换成文章开头生成地址里面的btcAddress
+输入 `curl -sS -X POST https://stacks-node-api.krypton.blockstack.org/extended/v1/faucets/btc?address=YOURBTCADDRESS` 领测试的BTC，YOURBTCADDRESS 换成文章开头生成地址里面的btcAddress。（出现`{"error":"[object Object]`"则重新运行一次）
 
 创建一个名为 blockstack 文件夹 进去后下载节点包并解压
 
@@ -88,7 +90,7 @@ amount = 10000000000000000
 配置镜像守护，注意ExecStart的执行路径指向你下载的stacks-node和miner-config的路径。
 
 ```shell
-echo '
+sudo echo '
 [Unit]
 Description=stack miner server
 After=network.target
@@ -96,14 +98,11 @@ After=network.target
 [Service]
 Type=simple
 Restart=always
-Environment=BLOCKSTACK_DEBUG=1
-Environment=RUST_BACKTRACE=FULL
 ExecStart=/root/blockstack/stacks-node start --config=/root/blockstack/miner-config.toml
 
 [Install]
 WantedBy=multi-user.target
 ' > /etc/systemd/system/miner.service
-
 systemctl enable miner
 ```
 
@@ -111,7 +110,7 @@ systemctl enable miner
 
 ```bash
 sed -i 's/#Storage=auto/Storage=persistent/g' /etc/systemd/journald.conf
- 
+journalctl --vacuum-size=500M
 systemctl restart systemd-journald
 ```
 
@@ -119,15 +118,21 @@ systemctl restart systemd-journald
 
 输入 `journalctl -u miner -f` 查看节点运行日志
 
+输入 `journalctl -u miner.service | grep "Miner node: starting up, UTXOs found."` ，有结果输出说明你的BTC是有余额的，否则重新领币并重启节点。
+
 输入 `curl http://localhost:20443/v2/info` 查看本地节点运行状态。如果是下面这样说明节点运行成功了，在同步区块。
 
 ![状态](stack.png)
 
 隔几分钟看看状态，一开始 burn_block_height 会增加，stacks_tip_height 是0。但如果 burn_block_height 已经300了，stacks_tip_height 还是0的话，可能挖到分叉链上了，需要输入 `systemctl restart miner` 重启节点重新同步。
 
-输入 `curl http://krypton.blockstack.org:20443/v2/info` 查看官方的节点运行状态。burn_block_height 和 stacks_tip_height 和官方的一样，说明同步完成，会自动开始挖矿了。
+输入 `curl http://krypton.blockstack.org:20443/v2/info` 查看官方的节点运行状态。burn_block_height 和 stacks_tip_height 和官方的一样（或者多1个块），说明同步完成，会自动开始挖矿了。
 
-遇到其他问题可以进官方discord去搜索。
+查看是否挖到矿的方法：
+`journalctl -u miner.service | grep 输入你的btc地址` 。如果出现类似 `including block_commit_op (winning) - mv8Vudk9SQNjxabG7fmvGqqTUe77WKspYA (7888dfc3aba1b3226bca19b625c10192bfd0c2bdfd6abc4e1f984cb5b350946e)`
+的消息说明是你有成功挖到了块。
+
+遇到其他问题可以查询 [stx-mining-faq](https://stacks101.com/stx-mining-faq/#running-stacks-node)，或者进官方discord去搜索。
 
 ## 运行挖矿机器人
 
