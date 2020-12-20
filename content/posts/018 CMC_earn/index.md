@@ -1,21 +1,19 @@
 ---
 title: "CMC的答题赚币活动答案"
 date: 2020-12-18T09:25:00+08:00
-lastmod: 2020-12-18T09:30:00+08:00
+lastmod: 2020-12-20T18:30:00+08:00
 draft: false
 summary: "直接提供答案"
 tags: ["reward"]
 ---
 
-（2020年12月18日更新）
+注意：需要币安KYC，中国大陆的无法参加
 
 CMC经常会办看视频答题活动，每个有 $10 奖励
 
 需要 注册 coinmarketcap.com 和 [币安](https://www.binance.com/cn/register?ref=10325256)
 
 活动地址 https://twitter.com/CoinMarketCap/status/1339481889757868032
-
-{{< tweet  1339481889757868032 >}}
 
 ## Helium
 
