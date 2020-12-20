@@ -19,7 +19,7 @@ tags: ["node"]
 
 ## 租 VPS
 
-我使用的VPS厂商是vultr，可以用 [该邀请链接](https://www.vultr.com/?ref=8744080-6G]) 注册，有为期一个月 $100 的免费额度可用。
+我使用的VPS厂商是vultr，可以用 [该邀请链接](https://www.vultr.com/?ref=8744080-6G) 注册，有为期一个月 $100 的免费额度可用。
 
 vultr 基本的界面操作在 [「akash节点部署视频流程」](https://www.bilibili.com/video/BV1Zz4y1k7FF/)里有，小白可以看看。
 
