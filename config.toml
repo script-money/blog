@@ -4,6 +4,7 @@ title = "脚本刷钱"
 theme = "github-style"
 copyright = "© 2020. Theme by <a href=\"https://github.com/MeiK2333/github-style\"><span>github-style</span></a>"
 ignoreErrors = ["error-remote-getjson"]
+timeout = 60000
 
 [params]
   author = "脚本刷钱"
