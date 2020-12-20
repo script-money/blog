@@ -13,7 +13,7 @@ tags: ["node"]
 
 先点击 [活动报名页面链接](https://daemontechnologies.co/minestx-challenge-zh) 报名
 
-需要生成地址，具体生成方式参考[该视频](https://www.youtube.com/watch?v=82b8PGoQYpI)。如果在本机生成遇到困难，可以先看后面，在服务器上去生成。注意要用 nodejs 14版本去生成。用低版本的 node 会遇到收到的报名邮件不显示BTC地址。
+需要生成地址，具体生成方式参考[该视频](https://www.youtube.com/watch?v=82b8PGoQYpI)。如果在本机生成遇到困难，可以先看后面，在服务器上去生成。
 
 有两个测试网 krypton 和 xenon ，一阶段活动是 krypton，使用的软件版本是 24.0.0.0-xenon，自己看文档的大佬别挖错了。
 
@@ -38,6 +38,8 @@ apt update
 apt upgrade -y
 apt install unzip -y
 ```
+
+输入 `curl -sS -X POST https://stacks-node-api.krypton.blockstack.org/extended/v1/faucets/btc?address=YOURBTCADDRESS` 领测试的BTC，YOURBTCADDRESS 换成文章开头生成地址里面的btcAddress
 
 创建一个名为 blockstack 文件夹 进去后下载节点包并解压
 
@@ -113,15 +115,17 @@ sed -i 's/#Storage=auto/Storage=persistent/g' /etc/systemd/journald.conf
 systemctl restart systemd-journald
 ```
 
-输入 `curl -sS -X POST https://stacks-node-api.krypton.blockstack.org/extended/v1/faucets/btc?address=YOURBTCADDRESS` 领测试的BTC，YOURBTCADDRESS 换成文章开头生成地址里面的btcAddress
-
 输入 `systemctl start miner` 启动节点
 
 输入 `journalctl -u miner -f` 查看节点运行日志
 
-输入 `curl http://localhost:20443/v2/info` 查看本地节点运行状态。一开始 burn_block_height 会追上，stacks_tip_height 会慢慢增加。但如果 burn_block_height 已经300了，stacks_tip_height 还是0的话，可能挖到分叉链上了，需要输入`systemctl restart miner`重启节点重新同步。
+输入 `curl http://localhost:20443/v2/info` 查看本地节点运行状态。如果是下面这样说明节点运行成功了，在同步区块。
 
-输入 `curl http://krypton.blockstack.org:20443/v2/info` 查看官方的节点运行状态。
+![状态](stack.png)
+
+隔几分钟看看状态，一开始 burn_block_height 会增加，stacks_tip_height 是0。但如果 burn_block_height 已经300了，stacks_tip_height 还是0的话，可能挖到分叉链上了，需要输入 `systemctl restart miner` 重启节点重新同步。
+
+输入 `curl http://krypton.blockstack.org:20443/v2/info` 查看官方的节点运行状态。burn_block_height 和 stacks_tip_height 和官方的一样，说明同步完成，会自动开始挖矿了。
 
 遇到其他问题可以进官方discord去搜索。
 
