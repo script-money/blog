@@ -27,7 +27,7 @@ tags: ["node"]
 
 vultr 基本的界面操作在 [「akash节点部署视频流程」](https://www.bilibili.com/video/BV1Zz4y1k7FF/)里有，小白可以看看。
 
-服务器配置至少选择 $20/mo 的。因为有 $100 免费额度，选更高配也行。如果选择 $20/mo 需要设置8GB的swap，否则运行节点程序会内存不足秒退。
+服务器配置至少选择 $20/mo 2核4G的。因为有 $100 免费额度，选更高配也行。如果选择4G内存需要设置8GB的swap，否则运行节点程序会内存不足秒退。
 
 设置swap参考 [该文章](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
 
@@ -87,7 +87,7 @@ address = "STRYYQQ9M8KAF4NS7WNZQYY59X93XEKR31JP64CP"
 amount = 10000000000000000
 ```
 
-配置镜像守护，注意ExecStart的执行路径指向你下载的stacks-node和miner-config的路径。
+配置镜像守护，注意ExecStart的执行路径指向你下载的stacks-node和miner-config的路径，例如你的用户根目录是/home/ubuntu，就改为`ExecStart=/home/ubuntu/blockstack/stacks-node start --config=/home/ubuntu/blockstack/miner-config.toml`
 
 ```shell
 sudo echo '
@@ -126,7 +126,9 @@ systemctl restart systemd-journald
 
 隔几分钟看看状态，一开始 burn_block_height 会增加，stacks_tip_height 是0。但如果 burn_block_height 已经300了，stacks_tip_height 还是0的话，可能挖到分叉链上了，需要输入 `systemctl restart miner` 重启节点重新同步。
 
-输入 `curl http://krypton.blockstack.org:20443/v2/info` 查看官方的节点运行状态。burn_block_height 和 stacks_tip_height 和官方的一样（或者多1个块），说明同步完成，会自动开始挖矿了。
+输入 `curl http://krypton.blockstack.org:20443/v2/info` 查看官方的节点运行状态。burn_block_height 和 stacks_tip_height 和官方的一样（或者多1个块），说明同步完成，会自动开始挖矿了。你就可以断开与VPS的连接了。
+
+stacks_tip_height 超出很多也可能是挖到了分叉链，需重启。
 
 查看是否挖到矿的方法：
 `journalctl -u miner.service | grep 输入你的btc地址` 。如果出现类似 `including block_commit_op (winning) - mv8Vudk9SQNjxabG7fmvGqqTUe77WKspYA (7888dfc3aba1b3226bca19b625c10192bfd0c2bdfd6abc4e1f984cb5b350946e)`
