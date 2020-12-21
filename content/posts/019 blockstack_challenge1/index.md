@@ -1,7 +1,7 @@
 ---
 title: "STX 采矿挑战第一阶段教程"
 date: 2020-12-20T18:30:00+08:00
-lastmod: 2020-12-21T06:20:00+08:00
+lastmod: 2020-12-21T16:07:00+08:00
 draft: false
 summary: "对活动流程简介，帮读者排一些坑"
 tags: ["node"]
@@ -134,7 +134,9 @@ stacks_tip_height 超出很多也可能是挖到了分叉链，需重启。
 `journalctl -u miner.service | grep 输入你的btc地址` 。如果出现类似 `including block_commit_op (winning) - mv8Vudk9SQNjxabG7fmvGqqTUe77WKspYA (7888dfc3aba1b3226bca19b625c10192bfd0c2bdfd6abc4e1f984cb5b350946e)`
 的消息说明是你有成功挖到了块。
 
-遇到其他问题可以查询 [stx-mining-faq](https://stacks101.com/stx-mining-faq/#running-stacks-node)，或者进官方discord去搜索。
+遇到其他问题可以下面评论区看看，有疑问欢迎留言。
+
+或者查询 [stx-mining-faq](https://stacks101.com/stx-mining-faq/#running-stacks-node)，或者进官方discord去搜索。
 
 ## 运行挖矿机器人
 
