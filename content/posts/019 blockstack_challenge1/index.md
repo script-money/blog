@@ -87,7 +87,7 @@ address = "STRYYQQ9M8KAF4NS7WNZQYY59X93XEKR31JP64CP"
 amount = 10000000000000000
 ```
 
-配置镜像守护，注意ExecStart的执行路径指向你下载的stacks-node和miner-config的路径，例如你的用户根目录是/home/ubuntu，就改为`ExecStart=/home/ubuntu/blockstack/stacks-node start --config=/home/ubuntu/blockstack/miner-config.toml`
+直接复制粘贴运行以下指令来配置镜像守护，注意ExecStart的执行路径指向你下载的stacks-node和miner-config的路径，例如你的用户根目录是/home/ubuntu，就改为`ExecStart=/home/ubuntu/blockstack/stacks-node start --config=/home/ubuntu/blockstack/miner-config.toml`
 
 ```shell
 sudo echo '
