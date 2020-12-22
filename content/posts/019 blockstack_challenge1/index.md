@@ -37,7 +37,7 @@ vultr 基本的界面操作在 [「akash节点部署视频流程」](https://www
 服务器配置至少选择 $20/mo 2核4G的。因为有 $100 免费额度，选更高配也行。
 地区建议选dallas，距离官方的节点最近。
 
-如果选择4G内存需要设置8GB的swap，否则可能运行节点程序会内存不足秒退。设置swap参考 [该文章](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
+~~如果选择4G内存需要设置8GB的swap，否则可能运行节点程序会内存不足秒退。设置swap参考 [该文章](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)~~
 
 我租用的是 Ubuntu 20.10 x64，默认是root用户，无需sudo。若自建用户，后面的指令遇到 no permission，在指令前加 `sudo` 运行。例如 `sudo apt update`
 
@@ -124,23 +124,23 @@ systemctl restart systemd-journald
 
 输入 `systemctl start miner` 启动节点
 
-输入 `journalctl -u miner -f` 查看节点运行日志
+等几秒输入`journalctl -u miner.service | grep UTXOs`，如果输出 *Miner node: starting up, UTXOs found*，就可以等着同步了。如果输出*Miner node: UTXOs not found. Switching to Follower node. Restart node when you get some UTXOs.* 无法找到BTC余额，是 bitcoind 的bug，只能继续重启，直到出现。没有以上输出的话再等一下输入`journalctl -u miner.service | grep UTXOs`查询。
 
-输入 `journalctl -u miner.service | grep "Miner node: starting up, UTXOs found."` ，有结果输出说明你的BTC是有余额的，否则重新领币并重启节点。
-
-输入 `curl http://localhost:20443/v2/info` 查看本地节点运行状态。如果是下面这样说明节点运行成功了，在同步区块。
+输入 `curl http://localhost:20443/v2/info` 查看本地节点运行状态。如果是下面这样说明节点运行成功了，在同步区块。你就可以断开与VPS的连接了。
 
 ![状态](stack.png)
 
-隔几分钟看看状态，一开始 burn_block_height 会增加，stacks_tip_height 是0。但如果 burn_block_height 已经300了，stacks_tip_height 还是0的话，可能挖到分叉链上了，需要输入 `systemctl restart miner` 重启节点重新同步。
+~~隔几分钟看看状态，一开始 burn_block_height 会增加，stacks_tip_height 是0。但如果 burn_block_height 已经300了，stacks_tip_height 还是0的话，可能挖到分叉链上了，需要输入 `systemctl restart miner` 重启节点重新同步。~~
 
-输入 `curl http://krypton.blockstack.org:20443/v2/info` 查看官方的节点运行状态。burn_block_height 和 stacks_tip_height 和官方的一样（或者多1个块），说明同步完成，会自动开始挖矿了。你就可以断开与VPS的连接了。
+输入 `curl http://krypton.blockstack.org:20443/v2/info` 查看官方的节点运行状态。burn_block_height 和 stacks_tip_height 和官方的一样（或者多1个块），说明同步完成，会自动开始挖矿了。
 
 stacks_tip_height 超出很多也可能是挖到了分叉链，需重启。
 
-查看是否挖到矿的方法：
-`journalctl -u miner.service | grep 输入你的btc地址` 。如果出现类似 `including block_commit_op (winning) - mv8Vudk9SQNjxabG7fmvGqqTUe77WKspYA (7888dfc3aba1b3226bca19b625c10192bfd0c2bdfd6abc4e1f984cb5b350946e)`
-的消息说明是你有成功挖到了块。
+查看是否正常在挖矿的方法：
+`journalctl -u miner.service | grep 输入你的btc地址` 。如果出现类似 `including block_commit_op - mv8Vudk9SQNjxabG7fmvGqqTUe77WKspYA (7888dfc3aba1b3226bca19b625c10192bfd0c2bdfd6abc4e1f984cb5b350946e)`
+的消息说明是你有成功参与共识，出现*winning*字样就是挖到了块。没有结果可能是没有同步好。如果同步好了还没有结果，可能挖分叉了，重启重新同步。
+
+官方原话：现在初步方案是只要参与30%以上的时间会拿到一个基础奖励，如果运气好能出块会有额外奖励。只要能坚持挖上5天左右都会有奖励的。
 
 遇到其他问题可以下面评论区看看，有疑问欢迎留言。
 
