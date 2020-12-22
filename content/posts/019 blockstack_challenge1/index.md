@@ -34,9 +34,10 @@ tags: ["node"]
 
 vultr 基本的界面操作在 [「akash节点部署视频流程」](https://www.bilibili.com/video/BV1Zz4y1k7FF/)里有，小白可以看看。
 
-服务器配置至少选择 $20/mo 2核4G的。因为有 $100 免费额度，选更高配也行。如果选择4G内存需要设置8GB的swap，否则运行节点程序会内存不足秒退。
+服务器配置至少选择 $20/mo 2核4G的。因为有 $100 免费额度，选更高配也行。
+地区建议选dallas，距离官方的节点最近。
 
-设置swap参考 [该文章](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
+如果选择4G内存需要设置8GB的swap，否则可能运行节点程序会内存不足秒退。设置swap参考 [该文章](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
 
 我租用的是 Ubuntu 20.10 x64，默认是root用户，无需sudo。若自建用户，后面的指令遇到 no permission，在指令前加 `sudo` 运行。例如 `sudo apt update`
 
