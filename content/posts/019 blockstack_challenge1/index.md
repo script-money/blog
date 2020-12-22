@@ -1,7 +1,7 @@
 ---
 title: "STX 采矿挑战第一阶段教程"
 date: 2020-12-20T18:30:00+08:00
-lastmod: 2020-12-21T16:07:00+08:00
+lastmod: 2020-12-22T08:55:00+08:00
 draft: false
 summary: "对活动流程简介，帮读者排一些坑"
 tags: ["node"]
@@ -9,7 +9,14 @@ tags: ["node"]
 
 # STX 采矿挑战第一阶段教程
 
-【12-21 06:00 更新：链又重启了，请重新去领BTC，然后重启节点】
+【12-22 09:00 更新】
+如何确定有没有在挖，没有挖怎么办？
+
+输入 `journalctl -u miner.service | grep 你的btc地址` 应该会有 `Received burnchain block #1300 including block_commit_op` 的结果出现。或者去[该页面](http://monitor.stxmining.xyz/mining_info )查看自己的地址 （没出过块的应该查不到），有个 "total_mined"和"miner_burned"，在涨就是正常在挖的。至于"actual_win"没有增长，一晚上才200多个块，起码400+的矿工在挖，能挖到1个都不容易。
+
+如果发现没有挖，需要重启节点，先删除原来日志`rm -rf /var/log/journal/*`，然后`systemctl restart miner`，重启后等几秒输入`journalctl -u miner.service | grep UTXOs`，如果输出 *Miner node: starting up, UTXOs found*，就可以等着同步了。如果输出*Miner node: UTXOs not found. Switching to Follower node. Restart node when you get some UTXOs.* 无法找到BTC余额，是 bitcoind 的bug，只能继续重启，直到出现。什么都没有的话再等一下输入`journalctl -u miner.service | grep UTXOs`
+
+---
 
 活动开始时间是北京时间2020年12月21日22:00，持续两周，预计有100刀的 STX 奖励。（根据挖矿效率和参与人数而定）
 
