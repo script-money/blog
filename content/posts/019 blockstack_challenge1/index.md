@@ -14,7 +14,7 @@ tags: ["node"]
 
 输入 `journalctl -u miner.service | grep 你的btc地址` 应该会有 `Received burnchain block #1300 including block_commit_op` 的结果出现。或者去[该页面](http://monitor.stxmining.xyz/mining_info )查看自己的地址 （没出过块的应该查不到），有个 "total_mined"和"miner_burned"，在涨就是正常在挖的。至于"actual_win"没有增长，一晚上才200多个块，起码400+的矿工在挖，能挖到1个都不容易。
 
-如果发现没有挖，需要重启节点，先删除原来日志`rm -rf /var/log/journal/*`，然后`systemctl restart miner`，重启后等几秒输入`journalctl -u miner.service | grep UTXOs`，如果输出 *Miner node: starting up, UTXOs found*，就可以等着同步了。如果输出*Miner node: UTXOs not found. Switching to Follower node. Restart node when you get some UTXOs.* 无法找到BTC余额，是 bitcoind 的bug，只能继续重启，直到出现。什么都没有的话再等一下输入`journalctl -u miner.service | grep UTXOs`
+如果发现没有挖，需要重启节点，先删除原来日志`rm -rf /var/log/journal/*`，然后`systemctl restart miner`，重启后等几秒输入`journalctl -u miner.service | grep UTXOs`，如果输出 *Miner node: starting up, UTXOs found*，就可以等着同步了。如果输出*Miner node: UTXOs not found. Switching to Follower node. Restart node when you get some UTXOs.* 无法找到BTC余额，是 bitcoind 的bug，只能继续重启，直到出现。没有以上输出的话再等一下输入`journalctl -u miner.service | grep UTXOs`查询。
 
 ---
 
