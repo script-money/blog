@@ -39,7 +39,7 @@ fetch("http://monitor.stxmining.xyz/mining_info", {
         console.log("当前挖矿人数:" + peoples + ",预计分得奖励" + Math.floor(stx_price * 145000 / peoples) + "刀")
         data.miner_info
             .forEach((item, _) => {
-                if (item.btc_address === your_btcaddress) {
+                if (item.btc_address === your_btc_address) {
                     // 快照时stack_height 484
                     let standard = (stacks_tip_height - 484) * .3
                     let your_mining = item.total_mined
