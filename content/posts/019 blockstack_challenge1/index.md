@@ -13,7 +13,7 @@ tags: ["node"]
 
 官方修改了规则，不按效率比排名，只要全程参与挖了30%的块就能平分。可以根据以下命令查询是否达标，没有达标的建议检查下节点是否正常运行，如果正常，继续挖到活动结束都能达标。
 
-访问 http://monitor.stxmining.xyz/mining_info，打开浏览器的开发者工具的console页，粘贴以下指令，换掉前两行，回车运行
+访问 http://monitor.stxmining.xyz/mining_info 打开浏览器的开发者工具的console页，粘贴以下指令，换掉前两行，回车运行
 
 ```javascript
 let stacks_tip_height = 751 // 访问 http://krypton.blockstack.org:20443/v2/info 查询
