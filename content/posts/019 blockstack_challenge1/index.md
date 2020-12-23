@@ -9,6 +9,51 @@ tags: ["node"]
 
 # STX 采矿挑战第一阶段教程
 
+【12-23 19:40 更新】
+
+官方修改了规则，不按效率比排名，只要全程参与挖了30%的块就能平分。可以根据以下命令查询是否达标，没有达标的建议检查下节点是否正常运行，如果正常，继续挖到活动结束都能达标。
+
+访问 http://monitor.stxmining.xyz/mining_info，打开浏览器的开发者工具的console页，粘贴以下指令，换掉前两行，回车运行
+
+```javascript
+let stacks_tip_height = 751 // 访问 http://krypton.blockstack.org:20443/v2/info 查询
+let your_btc_address = "mvfDyooJYk5AAJkpzxXDgZkTao6hyDdz4W"
+let stx_price = 0.266427
+
+fetch("http://monitor.stxmining.xyz/mining_info", {
+    "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "cache-control": "no-cache",
+        "pragma": "no-cache",
+        "upgrade-insecure-requests": "1"
+    },
+    "referrerPolicy": "strict-origin-when-cross-origin",
+    "body": null,
+    "method": "GET",
+    "mode": "cors",
+    "credentials": "omit"
+}).then(resp => resp.json())
+    .then(data => {
+        var peoples = data.miner_info.length;
+        console.log("当前挖矿人数:" + peoples + ",预计分得奖励" + Math.floor(stx_price * 145000 / peoples) + "刀")
+        data.miner_info
+            .forEach((item, _) => {
+                if (item.btc_address === your_btcaddress) {
+                    // 快照时stack_height 484
+                    let standard = (stacks_tip_height - 484) * .3
+                    let your_mining = item.total_mined
+                    console.log("你需要挖" + Math.floor(standard) + "块才算达标，已经挖了" + your_mining + "块")                                                
+                }
+            })
+    });
+
+```
+
+会出现类似 *当前挖矿人数:607，预计分得奖励63刀。你需要挖80块才算达标，已经挖了112块* 的提示。
+
+---
+
 【12-22 09:00 更新】
 如何确定有没有在挖，没有挖怎么办？
 
