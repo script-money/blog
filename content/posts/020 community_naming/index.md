@@ -15,7 +15,7 @@ tags: ["dao"]
 
 ![](example.png)
 
-在本文评论区，或者原贴 https://github.com/script-money/blog-comment/issues/3 进行投票操作
+在原贴 https://github.com/script-money/blog-comment/issues/3 进行投票操作
 
 时间截止到 2020年12月28日 10:00。
 
