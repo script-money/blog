@@ -1,5 +1,5 @@
 ---
-title: "社区征名活动投票"
+title: "社区征名活动投票（已结束）"
 date: 2020-12-25T08:40:00+08:00
 lastmod: 2020-12-26T10:00:00+08:00
 draft: false
@@ -8,6 +8,16 @@ tags: ["dao"]
 ---
 
 # 社区征名活动
+
+【1月1日更新】
+
+使用票数最高的 Crypto Chaser，作为社区名。和原作者讨论后加了复数s写法。
+
+[投票结果](https://github.com/script-money/blog-comment/issues/3#issuecomment-751265540)
+
+欢迎加入 Crypto Chasers 的 discord 频道。 https://discord.gg/KVVj6AGgDZ
+
+---
 
 【12月26日更新】
 
