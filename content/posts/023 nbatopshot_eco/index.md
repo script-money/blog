@@ -13,7 +13,8 @@ NBATopShot 吸引了大量玩家自发参与生态建设。我自己也在社区
 
 * *[cryptoslam](https://www.cryptoslam.io/)* NFT综合信息网，不仅包含NBATopShot，还有其他区块链游戏信息。对于 NBATopShot 玩家来说，最常用功能是 **查看整体市场走势** ，和 **查找mint的moment信息**（特别是已经挖出来但没流通的）。
 * *[evaluate.market](https://evaluate.market/)* 常用功能有 **查看单个moment的价格走势** 和账户估值。用户体验好，我最常用的网站。
-* *[momentranks](https://momentranks.com/)* 新上线不久，用了机器学习算法，数据每4分钟更新一次，估值最为精确。有小号的卡但不知道卖多少可以参考该网站的数据。常用功能是 **查看估值**。
+* *[momentranks](https://momentranks.com/)* 新上线不久，用了机器学习算法，数据每4分钟更新一次，估值最为精确。有小号的卡但不知道卖多少可以参考该网站的数据。常用功能是**查看估值**。
+* *[flowmarketcap](https://flowmarketcap.com/#/)* 对球员市值进行了排名，常用与**查看市值**，用来分析某个moment是否被高估或低估。
 * *[intangible.market](https://intangible.market/Home.php)* 最早的一个查信息的网站，对早期玩家帮助很大。目前有更好的替代品，不再使用。
 
 ## 热门社区
