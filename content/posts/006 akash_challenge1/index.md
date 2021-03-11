@@ -86,6 +86,7 @@ make install # 大概等2分钟
 ![](./variable2.png)
 
 > [Akash挑战3流程]({{< ref "/posts/008 akash_challenge3/index.md" >}} "akash_challenge3") 有完整的shell指令可以直接复制
+
 ## 创建部署配置文件
 创建复制网页上的 deploy.yml 到本地，一行都不用改。也可以用`curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml`直接下载。
 > 如果是部署自己的web应用就需要做修改，类似docker镜像的部署，属于其中一个开放挑战的任务的要求。
