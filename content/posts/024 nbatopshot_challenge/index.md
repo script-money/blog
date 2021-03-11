@@ -1,7 +1,7 @@
 ---
 title: "NBATopShot 挑战赛收益分析"
 date: 2021-03-11T14:29:00+08:00
-lastmod: 2020-03-11T15:07:00+08:00
+lastmod: 2021-03-11T15:07:00+08:00
 draft: false
 summary: "分析近期的挑战赛，预测 Seeing&Rising stars 挑战赛的收益"
 tags: ["NBATopShot"]
@@ -9,7 +9,7 @@ tags: ["NBATopShot"]
 
 ## 什么是挑战赛（challenges）？
 
-打开首页，导航栏选择 *COLLECTION*，左边的 *CHALLENGES* 就是挑战赛。*Active Challenges* 是当前可以参加的挑战。
+打开首页，导航栏选择 *COLLECTION* ，左边的 *CHALLENGES* 就是挑战赛。*Active Challenges* 是当前可以参加的挑战。
 ![challenge_entry](challenge_entry.png)
 
 要完成挑战赛，你必须至少获得每个所需moment(精彩瞬间)中的一个，坚持到计时器结束，就会得到这个专属奖励。
