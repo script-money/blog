@@ -17,6 +17,8 @@ BitClout 是一种新型的社交网络，它可以让你用真金白银来炒�
 
 访问 [https://bitclout.com/](https://bitclout.com/)，选择右边的 **Sign Up**
 
+> 如果提示需要密码，使用 [https://bitclout.com/?password=825bbae8589b65720731d867f436471e18683c6a3192a20140105ee1733bb7cc](https://bitclout.com/?password=825bbae8589b65720731d867f436471e18683c6a3192a20140105ee1733bb7cc) 访问
+
 ![login](loginin.png)
 
 第一步保存助记词。
