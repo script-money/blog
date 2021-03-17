@@ -3,17 +3,33 @@ version: "2.0"
 
 services:
   web:
-    image: scriptmoney/blog:20201212-2
+    image: nextcloud
     env:
-      - BASEURL=akash.script.money
+      - NEXTCLOUD_TRUSTED_DOMAINS=nextcloud.script.money
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=4EO24ZmTmM9a
+      - MYSQL_HOST=db_srv
     expose:
       - port: 80
         as: 80
         accept:
-          - akash.script.money
+          - nextcloud.script.money
         to:
           - global: true
-
+  db:
+    image: mariadb
+    env:
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_PASSWORD=4EO24ZmTmM9a
+      - MYSQL_USER=nextcloud
+      - MYSQL_ROOT_PASSWORD=4ulloKZ6NI1g
+    expose:
+      - port: 3306
+        as: 3306
+        to:
+          - service: db_srv
+          - global: false
 profiles:
   compute:
     web:
@@ -23,21 +39,34 @@ profiles:
         memory:
           size: 512Mi
         storage:
+          size: 128Mi
+    db:
+      resources:
+        cpu:
+          units: 0.1
+        memory:
           size: 512Mi
+        storage:
+          size: 2Gi
   placement:
-    westcoast:
+    equinix:
       attributes:
-        organization: ovrclk.com
-      signedBy:
-        anyOf:
-          - "akash1vz375dkt0c60annyp6mkzeejfq0qpyevhseu05"
+        datacenter: equinix-metal-ams1
       pricing:
         web: 
           denom: uakt
-          amount: 1000
+          amount: 1
+        db: 
+          denom: uakt
+          amount: 1
+    
 
 deployment:
   web:
-    westcoast:
+    equinix:
       profile: web
+      count: 1
+  db:
+    equinix:
+      profile: db
       count: 1
