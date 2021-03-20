@@ -1,7 +1,7 @@
 ---
 title: "BitClout 入门介绍"
 date: 2021-03-18T05:00:00+08:00
-lastmod: 2021-03-20T13:15:00+08:00
+lastmod: 2021-03-21T4:30:00+08:00
 draft: false
 summary: "介绍 BitClout 的玩法和建议"
 tags: ["BitClout"]
@@ -56,13 +56,15 @@ BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍�
 
 注意 @doveywan 旁有个时钟图标，说明 doveywan 还没有验证自己的推特，也可以说她还没有使用该平台。
 
-目前 Top10 里，只有 naval、chamath 和 孙宇晨 验证了自己的账号。好笑的是，孙割一开始不在启动名单，是自己注册验证，并买了大量的 BitClout 然后买自己的名人币，抬到了 Top10。
+目前 Top10 里，只有 chamath 和 wallstreetbets 验证了自己的账号。
 
-![Top10](top10.png)
+![Top10-2](top10-2.png)
 
 如果卖出名人币换 BitClout，该名人币的流通量会减少，单价也会下跌。机制类似 AMM。
 
-目前还没有 BitClout 换 Bitcoin 的官方渠道，充了值就拿不回来了，除非场外售卖。由于 @binance 和 @coinbase 都验证了各自的账号，未来应该会上交易所。
+注意，目前还没有 BitClout 换 Bitcoin 的官方渠道，充了值就拿不回来了，只能场外交易。
+
+*Qiao Wan* 专门发推说过项目背后有 *serious team* 和 *serious backers* ，未来应该会上交易所，否则就是 *serious team* 割 *serious backers*。
 
 ## 如何获利
 
@@ -76,7 +78,7 @@ BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍�
 
 作为名人也可以对其名人币赋能，造成币价上涨，比如举办股东见面会、按持币优先级处理私信、发白金内容、发赞助内容、和第一的人共进午餐、作为货币购买周边等，当然这要看名人自己的意愿了。
 
-注意平台目前有很多虚假账户，购买时一定要确认下其 BitClout ID 和推特ID是否能对应起来。
+注意平台目前有很多虚假账户，购买时一定要确认下其 BitClout ID 和推特ID是否能对应起来。自己建运营假账户也是赚钱手段之一。
 
 如果想支持我，认准唯一ID [https://bitclout.com/u/scriptmoney](https://bitclout.com/u/scriptmoney) 购买 scriptmoney coin 即可。
 
