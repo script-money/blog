@@ -64,7 +64,9 @@ BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍�
 
 注意，目前还没有 BitClout 换 Bitcoin 的官方渠道，充了值就拿不回来了，只能场外交易。
 
-*Qiao Wan* 专门发推说过项目背后有 *serious team* 和 *serious backers* ，未来应该会上交易所，否则就是 *serious team* 割 *serious backers*。
+*Qiao Wan* 专门发推说过项目背后有 *serious team* 和 *serious backers* 。可以推断未来会上交易所，否则就是 *serious team* 割 *serious backers*。
+
+![QiaoWang](QiaoWang.png)
 
 ## 如何获利
 
@@ -82,8 +84,14 @@ BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍�
 
 如果想支持我，认准唯一ID [https://bitclout.com/u/scriptmoney](https://bitclout.com/u/scriptmoney) 购买 scriptmoney coin 即可。
 
-![scriptmoney_coin](scriptmoney_coin.png)
+![scriptmoney_coin](scriptmoney_coin-2.png)
 
-BitClout中文社区
+## 3月21日更新
 
-![BitClout中文社区](bitclout_0327.png)
+建群玩了 2 天，项目非常好玩，但有必要做风险提醒：
+
+1. 群友建了很多假大V相互炒作骗外国人，部分被封了（数据在链上，但前端被隐藏）。经研究 coinbase、binance、justinsuntron 都是有人搞假号炒作。
+2. 波动很大，像在搞100倍合约。注意仓位控制。
+3. 名人币持仓透明，相互割且知道被谁割，需要较强心理承受能力。
+4. BitClout 背后有很多机构，但持仓成本很低。
+5. 目前名人币没有其他功能，只是纯用来炒。
