@@ -38,7 +38,9 @@ BitClout 是一种新型的社交网络，它可以让你用真金白银来炒�
 
 ![buy_bitcloud](buy_bitclout.png)
 
-如果购买了 $6 的 BitClout，就可以设置个人信息。有一个 *Founder Reward Percentage* 的选项，默认是10。意思是
+注意购买 BitClout 需要额外付 $13 左右比特币网络矿工费。
+
+如果购买了至少 $6 的 BitClout，就可以设置个人信息。设置时有一个 *Founder Reward Percentage* 的选项，默认是10。意思是
 购买该名人的币，会有一定比例直接发送到该名人的地址作为*founder reward* 。如果为10，你购买 1 某名人币，该名人可以获得 0.1，你获得 0.9。
 
 ![update_profile](update_profile.png)
