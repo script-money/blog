@@ -43,7 +43,7 @@ SERVICE_NAME=
 # 2.7 查询cert
 # akash query cert list --owner $ACCOUNT_ADDRESS --log_level info  --node $AKASH_NODE
 # 2.9 查询当前账户的deployment
-# akash query deployment list --owner $ACCOUNT_ADDRESS --log_level info  --node $AKASH_NODE
+akash query deployment list --owner $ACCOUNT_ADDRESS --log_level info  --node $AKASH_NODE
 
 
 # 3. from bid create lease. modify dseq and provider
@@ -66,7 +66,7 @@ SERVICE_NAME=
 # 4. 查询单个部署租约的状态，可获得服务web地址
 # akash provider lease-status --node $AKASH_NODE --from $KEY_NAME --dseq $DSEQ --home ~/.akash --provider $PROVIDER
 # akash provider lease-logs --node $AKASH_NODE --from $KEY_NAME --dseq $DSEQ --home ~/.akash --provider $PROVIDER
-akash provider lease-events --node $AKASH_NODE --from $KEY_NAME --dseq $DSEQ --home ~/.akash --provider $PROVIDER
+# akash provider lease-events --node $AKASH_NODE --from $KEY_NAME --dseq $DSEQ --home ~/.akash --provider $PROVIDER
 
 # 5. 获取要提交的json
 # akash query market lease get --dseq $DSEQ --gseq $GSEQ --oseq $OSEQ \

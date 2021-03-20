@@ -1,7 +1,7 @@
 ---
 title: "BitClout 入门介绍"
 date: 2021-03-18T05:00:00+08:00
-lastmod: 2021-03-18T08:12:00+08:00
+lastmod: 2021-03-20T13:15:00+08:00
 draft: false
 summary: "介绍 BitClout 的玩法和建议"
 tags: ["BitClout"]
@@ -34,7 +34,7 @@ BitClout 是一种新型的社交网络，它可以让你用真金白银来炒�
 
 ![create_profile](create_profile.png)
 
-直接把比特币打到该收款地址（可以从交易所提币，网络选btc），确认到账后就能购买 BitClout 了。
+直接把比特币打到该收款地址（可以从FTX交易所提币没有矿工费），确认到账后就能购买 BitClout 了。
 
 ![buy_bitcloud](buy_bitclout.png)
 
@@ -79,3 +79,7 @@ BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍�
 如果想支持我，认准唯一ID [https://bitclout.com/u/scriptmoney](https://bitclout.com/u/scriptmoney) 购买 scriptmoney coin 即可。
 
 ![scriptmoney_coin](scriptmoney_coin.png)
+
+BitClout中文社区
+
+![BitClout中文社区](bitclout_0327.png)
