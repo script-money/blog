@@ -64,7 +64,7 @@ BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍�
 
 注意，目前还没有 BitClout 换 Bitcoin 的官方渠道，充了值就拿不回来了，只能场外交易。
 
-*Qiao Wan* 专门发推说过项目背后有 *serious team* 和 *serious backers* 。可以推断未来会上交易所，否则就是 *serious team* 割 *serious backers*。
+*Qiao Wan* 专门发推说过项目背后有 *serious team* 和 *serious backers* 。可以推断未来会上交易所，否则就是 *serious team* 割 *serious backers* 。
 
 ![QiaoWang](QiaoWang.png)
 
