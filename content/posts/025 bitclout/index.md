@@ -30,18 +30,18 @@ BitClout 是一种新型的社交网络，它可以让你用真金白银来炒�
 
 第四步绑定邮箱，以获取通知，也可以跳过。
 
-随后会让创建个人信息，由于手机号无法验证，只能选择购买 $6 的BitClout来激活。
+随后会让创建个人信息，由于手机号无法验证，只能选择购买 $57 的BitClout来激活。
 
-![create_profile](create_profile.png)
+![create_profile](create_profile_2.png)
 
-直接把比特币打到该收款地址（可以从FTX交易所提币没有矿工费），确认到账后就能购买 BitClout 了。
+注意购买 BitClout 需要额外付 $13 左右比特币网络矿工费。所以起码要充值 $70 的 BTC。
+
+直接把比特币打到下图的充币地址（可以从FTX交易所提币没有矿工费），确认到账后就能购买 BitClout 了。
 
 ![buy_bitcloud](buy_bitclout.png)
 
-注意购买 BitClout 需要额外付 $13 左右比特币网络矿工费。
-
-如果购买了至少 $6 的 BitClout，就可以设置个人信息。设置时有一个 *Founder Reward Percentage* 的选项，默认是10。意思是
-购买该名人的币，会有一定比例直接发送到该名人的地址作为*founder reward* 。如果为10，你购买 1 某名人币，该名人可以获得 0.1，你获得 0.9。
+设置个人信息有一个 *Founder Reward Percentage* 的选项，默认是10。意思是
+购买该名人的币，会有一定比例直接发送到该名人的地址作为*founder reward* 。如果为10，你购买 1 某名人币，该名人可以获得 0.1，你获得 0.9。新号建议先设置到 100，防止别人抢买，等自己建仓完成再调低。
 
 ![update_profile](update_profile.png)
 
@@ -50,7 +50,7 @@ BitClout 是一种新型的社交网络，它可以让你用真金白银来炒�
 `.003 * creator_coins_in_circulation^2`
 。以下图的 doveywan 为例，流通 40.1274 doveywan coin ，按 BitClout 计价是 `0.003*40.1274^2= 4.83(BitClout)`。写文章的时候，BitClout的价格为 $122.64 。所以如图所示 doveywan coin 价格 `4.83 * $122.64 ≈ $592`。
 
-BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍。长期来看，BitClout的发行量在1000万到1900万之间。
+BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍。长期来看，BitClout的发行量在1000万到1900万之间。目前流通不到 800万 。
 
 ![buy_coin](doveywan.png)
 
