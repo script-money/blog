@@ -1,7 +1,7 @@
 ---
 title: "BitClout 入门介绍"
 date: 2021-03-18T05:00:00+08:00
-lastmod: 2021-03-21T4:30:00+08:00
+lastmod: 2021-04-01T21:00:00+08:00
 draft: false
 summary: "介绍 BitClout 的玩法和建议"
 tags: ["BitClout"]
@@ -38,6 +38,8 @@ BitClout 是一种新型的社交网络，它可以让你用真金白银来炒�
 
 直接把比特币打到下图的充币地址（可以从FTX交易所提币没有矿工费），确认到账后就能购买 BitClout 了。
 
+> 建议只花 $70 的 BTC 激活账户，需要更多的 BitClout 可以5-7折场外交易（见文章最后）。不激活用匿名账户只能买卖也可以玩。
+
 ![buy_bitcloud](buy_bitclout.png)
 
 设置个人信息有一个 *Founder Reward Percentage* 的选项，默认是10。意思是
@@ -50,7 +52,7 @@ BitClout 是一种新型的社交网络，它可以让你用真金白银来炒�
 `.003 * creator_coins_in_circulation^2`
 。以下图的 doveywan 为例，流通 40.1274 doveywan coin ，按 BitClout 计价是 `0.003*40.1274^2= 4.83(BitClout)`。写文章的时候，BitClout的价格为 $122.64 。所以如图所示 doveywan coin 价格 `4.83 * $122.64 ≈ $592`。
 
-BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍。长期来看，BitClout的发行量在1000万到1900万之间。目前流通不到 800万 。
+BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍。长期来看，BitClout的发行量在1000万到1900万之间。目前流通 800 多万 。
 
 ![buy_coin](doveywan.png)
 
@@ -95,3 +97,9 @@ BitClout 的价格是每卖出100万个BitClout，BitClout的价格就会翻倍�
 3. 名人币持仓透明，相互割且知道被谁割，需要较强心理承受能力。
 4. BitClout 背后有很多机构，但持仓成本很低。
 5. 目前名人币没有其他功能，只是纯用来炒。
+
+## 4月1日更新
+
+项目发展很快。很多推特名人入场进行运营，其中有赋能名人币的，例如某写真女模特给前十持币者送签名写真，某网站的创始人和holder举行私人网络会议。
+
+我也赋能我的名人币。如果买 0.1 个 scriptmoney coin，大概 $280，微信加 script-money，拉你进社区群。可以先加我，场外买币后再买门票。社区群有防割建议、最新资源、独家内幕、免费撮合场外交易，且非常活跃。
