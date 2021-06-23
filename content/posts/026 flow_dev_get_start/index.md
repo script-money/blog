@@ -23,4 +23,8 @@ web端的代码，主要完成用户端的功能，同样可以参考kitty-items
 
 另外所有样例代码记得及时pull，flow-cli也及时更新，迭代还是蛮快的。
 
-目前web端和合约端的模拟器环境都完整跑了一遍，代码库是 [FanNFT](https://github.com/script-money/FanNFT)，除了实现标准的NFT接口，还有些特殊的设计。后续服务端开发和测试网集成有需要注意的点再进行补充。
+目前web端和合约端的模拟器环境都完整跑了一遍，代码库是 [FanNFT](https://github.com/script-money/FanNFT)，除了实现标准的NFT接口，还有些特殊的设计。
+
+flow-cli升级到新版本后发现本地钱包不能用了，部署到测试网合约运算有bug，需要完全升级。建议参考重构过的kitty-item。
+
+另外测试网响应慢，本地模拟器看不出来，是需要在UX上做一些设计的。
