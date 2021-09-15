@@ -1,19 +1,19 @@
 ---
 title: 'Flow 主网命令行转账步骤'
 date: 2021-06-23T21:00:00+08:00
-lastmod: 2021-06-23T22:08:00+08:00
+lastmod: 2021-09-15T9:52:00+08:00
 draft: false
 summary: '介绍导出私钥并在Flow主网用命令行转账的方法'
 tags: ['Flow']
 ---
 
-> flow-cli 使用版本 v0.24.0
+> flow-cli 使用版本 v0.28.2
 
 众所周知，flow 主网目前由 blocto 和 dapper 托管着钱包，自己生成的 keys 又不能生成账户，所以介绍下如何从 blocto 转出私钥并用 cli 转账。
 
 1. 打开 blocto 的移动端钱包，设定——安全性——自管私钥模式，设定备援密码然后导出。
 2. 会收到一封 Blocto Account Recovery Kit 的邮件，里面的附件是 keystore 的 json。复制保存为 keystore.json 文件。
-3. 参考以下 js 代码算出私钥，需`npm i ethereum-keystore`
+3. 参考以下 js 代码算出私钥，需`yarn add ethereum-keystore`
 
    ```javascript
    const { recoverKeystore } = require('ethereum-keystore');
@@ -114,6 +114,6 @@ tags: ['Flow']
 
 > 成功截图
 
-    ![tx-success](tx-success.png)
+![tx-success](tx-success.png)
 
 8. 批量转账可参考 https://github.com/script-money/flowTokenBatchSend ，使用 python-sdk 开发
