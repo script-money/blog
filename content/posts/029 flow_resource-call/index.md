@@ -1,7 +1,7 @@
 ---
 title: 'cadence不同角色资源访问'
 date: 2021-08-16T22:00:00+08:00
-lastmod: 2021-08-19T1640:00+08:00
+lastmod: 2021-08-19T16:40:00+08:00
 draft: false
 summary: '介绍 flow 合约语言 cadence 中不同角色资源调用的方式'
 tags: ['flow']
