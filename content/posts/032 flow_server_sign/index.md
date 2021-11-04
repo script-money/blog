@@ -40,7 +40,7 @@ const transaction = await mutate({
 await tx(transaction).onceSealed();
 ```
 
-remoteAuthz 是 `(account: Account) => Account`的函数，传入和返回都是一个 Account 对象，结构如下。传入的 account 的 fcl 会自动帮你构造。
+remoteAuthz 是 `(account: Account) => Account`的函数，传入和返回都是一个 Account 对象，结构如下。传入的 account fcl 会自动帮你构造。
 
 ```Typescript
 export interface Account {
@@ -61,13 +61,13 @@ export interface Account {
 }
 ```
 
-最终的 addr，keyId 需要填写服务端付款的账户的 addr 和 keyId，可以写死，也可以服务端写个 resolve 函数来获取可用的 key。官方的示例是写了两个账户，可以返回不同的可用账户。写死的话就一个请求获取签名就行，下面示例是二次请求的
+最终的 addr，keyId 需要填写服务端付款的账户的 addr 和 keyId，可以写死，也可以服务端写个 resolve 函数来获取可用的 key。官方的示例是在服务端准备了两个账户，函数可以返回不同的可用账户。写死的话就一个请求获取签名就行，下面示例是二次请求的
 
 服务端的 controller
 
 ```Typescript
-@Post('/resolveaccount')
-async resolveaccount(@Body() account: Account): Promise<Account> {
+@Post('/resolve-account')
+async resolveAccount(@Body() account: Account): Promise<Account> {
   const resolveaccount = await this.flowService.TPSAccountResolver(account);
   return resolveaccount;
 }
@@ -83,7 +83,7 @@ async sign(@Body() signable: any) {
 
 ```Typescript
 async function remoteAuthz(account: Account) {
-  const resolvedAccount = await fetch(BASE_URL + '/resolveaccount', {
+  const resolvedAccount = await fetch(BASE_URL + '/resolve-account', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(account)
@@ -123,7 +123,7 @@ TPSAccountResolver = async (account: Account) => {
 };
 ```
 
-返回的样子如下。只有 addr，keyId，tempId 是服务端添加的，其余都是前端上传的
+返回的样子如下。只有 addr，keyId，tempId 是服务端添加的，其余都是之前前端上传的
 
 ```Typescript
 {
