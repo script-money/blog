@@ -14,7 +14,7 @@ summary: '本文素材来源于CryptoChasers技术社区从 2021 年 5 月底到
 
 “道”是指遵循事物的发展规律，确定自身的发展方向、愿景和战略。
 
-程序员在 Crypto 发展的方向有多个，推荐新入行的程序员阅读[「 程序员入坑 Web3 学习路径」](https://script.money/posts/031-programmer_learn_path/)
+程序员在 Crypto 发展的方向有多个，推荐新入行的程序员阅读[「 程序员入坑 Web3 学习路径」](https://script.money/post/031-programmer_learn_path/)
 
 ### 程序员在币圈可以做的事情
 

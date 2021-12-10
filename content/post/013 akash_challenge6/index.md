@@ -1,21 +1,21 @@
 ---
-title: "Akash第二周挑战3流程（已结束）"
+title: 'Akash第二周挑战3流程（已结束）'
 date: 2020-12-09T22:00:00+08:00
 lastmod: 2020-12-12T14:00:00+08:00
 draft: false
-summary: "介绍第二周挑战3部署验证节点流程"
-tags: ["Akash"]
+summary: '介绍第二周挑战3部署验证节点流程'
+tags: ['Akash']
 ---
 
-# Akash第二周挑战3流程
+# Akash 第二周挑战 3 流程
 
 最后的挑战是综合前面，有一定难度。前面的都搞清楚的话，部署没啥问题。
 
-大致流程是用 deploy-2-3.yaml（和2-2的基本一样），跑云节点，然后通过调用云节点的RPC，去生成验证人信息，并部署成验证人。验证人加入列表之后就可以关闭部署了。最关键的地方是把验证人节点名（MONIKER）设置成邀请码，验证人列表里就能看到。
+大致流程是用 deploy-2-3.yaml（和 2-2 的基本一样），跑云节点，然后通过调用云节点的 RPC，去生成验证人信息，并部署成验证人。验证人加入列表之后就可以关闭部署了。最关键的地方是把验证人节点名（MONIKER）设置成邀请码，验证人列表里就能看到。
 
 官方文档 https://docs.akash.network/testnet-challenges/testnet-challenges/guided-deployments#challenge-3-week-2
 
-部署前需先生成钱包并领测试币，参考 [Akash节点部署流程]({{< ref "/posts/005 akash_node/index.md" >}} "akash_node") 的前半部分运行akash本地程序 和 [Akash挑战1流程（已结束）]({{< ref "/posts/006 akash_challenge1/index.md" >}}) 的生成钱包。
+部署前需先生成钱包并领测试币，参考 [Akash 节点部署流程]({{< ref "/post/005 akash_node/index.md" >}} "akash_node") 的前半部分运行 akash 本地程序 和 [Akash 挑战 1 流程（已结束）]({{< ref "/post/006 akash_challenge1/index.md" >}}) 的生成钱包。
 
 运行代码都在下面。
 
@@ -119,10 +119,10 @@ akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $
 
 ```
 
-提交方法参考 [Akash挑战1流程（已结束）]({{< ref "/posts/006 akash_challenge1/index.md" >}} "akash_challenge1") 的后面。
+提交方法参考 [Akash 挑战 1 流程（已结束）]({{< ref "/post/006 akash_challenge1/index.md" >}} "akash_challenge1") 的后面。
 
 最后一个任务了。提交得越早的人奖励越多，大家冲起来。
 
-> 如果Provider实在太坑老报错，万不得已，就参考之前的教程自己租服务器部署验证人吧。我们凌晨测试云节点很流畅。
-RPC的使用方法可以参考 [Akash第二周挑战2流程]({{< ref "/posts/012 akash_challenge5/index.md" >}} "akash_challenge5") 。
-验证人部署可以参考 [Akash节点部署流程]({{< ref "/posts/005 akash_node/index.md" >}} "akash_node") 的最后。
+> 如果 Provider 实在太坑老报错，万不得已，就参考之前的教程自己租服务器部署验证人吧。我们凌晨测试云节点很流畅。
+> RPC 的使用方法可以参考 [Akash 第二周挑战 2 流程]({{< ref "/post/012 akash_challenge5/index.md" >}} "akash_challenge5") 。
+> 验证人部署可以参考 [Akash 节点部署流程]({{< ref "/post/005 akash_node/index.md" >}} "akash_node") 的最后。

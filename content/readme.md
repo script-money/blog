@@ -1,8 +1,17 @@
 ---
-title: 'About'
-date: 2021-09-24T10:00:00+08:00
-layout: 'about'
+title: 'README'
+date: 2021-12-10T17:00:00+08:00
 ---
+
+## Link
+
+- Community(discord): [cryptochasers](https://discord.gg/cryptochasers)
+- Email: <hello@script.money>
+- Twitter(私信开放): [scriptdotmoney](https://twitter.com/scriptdotmoney)
+- GitHub: [script-money](https://github.com/script-money)
+- Blog: [script.money](https://script.money)
+
+## Story
 
 17 年老韭菜，本职程序员，从 ppt 干到运维的全栈工程师
 
@@ -43,7 +52,3 @@ Write publicly to connect with others. Write privately to connect with yourself.
 - 专注炒币之外的一切，通过参与而非投机来让自己增值。
 - 投资未来 ~ 花一年时间磨练你的技艺，然后，机会的大门将会为你打开。
 - 没有人可以阻止你的学习能力，这是唯一没有最低资本门槛的生意。
-
-9 月 24 日更新：
-
-目前社区正常运行，正在搭建社区的去中心化活动交流平台。

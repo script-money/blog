@@ -1,10 +1,13 @@
 baseURL = "/"
+languageCode = "zh-cn"
 relativeURLs = "True"
 title = "脚本刷钱"
 theme = "github-style"
 copyright = "© 2020. Theme by <a href=\"https://github.com/MeiK2333/github-style\"><span>github-style</span></a>"
 ignoreErrors = ["error-remote-getjson"]
 timeout = 60000
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 
 [params]
   author = "脚本刷钱"
@@ -17,6 +20,11 @@ timeout = 60000
   twitter = "scriptdotmoney"
   bitclout = "scriptmoney"
   avatar = "/avatar_box.png"
-  url = "https://www.script.money"
+  url = "https://script.money"
   keywords = "script, automatic, scripts, 脚本, 自动化, 节点, node, 区块链, blockchain"
   utterances= "script-money/blog-comment"
+  lastmod = true
+  userStatusEmoji = "🧱"
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
