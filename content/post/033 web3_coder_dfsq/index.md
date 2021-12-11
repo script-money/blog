@@ -242,13 +242,18 @@ infura 有限制，但可以白嫖，有几种方法
 _0xa9059cbb（MethodID）
 [0]:000000000000000000000000b8790157b2e27f2a81d3ca72752fd1a46b87c994
 [1]:0000000000000000000000000000000000000000000000000000000000000001_
+
 0xa9059cbb（MethodID）这个方法是什么，可以无视，能直接复用就行，直接看后边猜猜是什么。也可以搜索一下类似的，现在几乎没原创合约。
+
 _[0]:000000000000000000000000b8790157b2e27f2a81d3ca72752fd1a46b87c994_
 这个一看就知道，是个地址
 _[1]:0000000000000000000000000000000000000000000000000000000000000001_
 这个靠经验看，就是 16 进制的数量了
+
 只要有网站，就能拿到 abi，拿到 abi 后用函数加上入参类型，sha3 哈希下，前四个字节就是调用的函数
+
 方法名和参数，小狐狸发送交易的时候也会有提示
+
 实在找不到，调用的时候方法名可以直接写 0xa9059cbb 也可以
 
 > 更详细的可参考[以太坊 Input Data 解析](https://www.163.com/dy/article/GMBJHUQB0531I6Y1.html) 和 [我们为什么需要交易数据?](https://www.sohu.com/a/298453584_100195591)
@@ -256,7 +261,9 @@ _[1]:0000000000000000000000000000000000000000000000000000000000000001_
 ### 数值转换
 
 Q: 这个要怎么转换：_"amount":"0x0233c8fe42703e800000"_，16 进制转 10 进制
+
 A: 0x0233c8fe42703e800000 == 10400000000000000000000 去掉 Deciamls 18 == 10400
+
 A: `ethers.utils.formatUnits("0x0233c8fe42703e800000", 18)`
 
 ### 合约间交互
@@ -270,70 +277,89 @@ A: `ethers.utils.formatUnits("0x0233c8fe42703e800000", 18)`
 ### 前端数字更新
 
 Q: 页面上有个数字一直在变动（该数字是质押挖矿后，待收获的矿币数量）。我想知道这个数字是由前端页面的哪段代码来负责更新的呢，有没有思路？
+
 A: [FarmStakingCard.tsx](https://github.com/pancakeswap/pancake-frontend/blob/96e8e5b85e0a5555032ae8e30340b0a4d0df4e39/src/views/Home/components/FarmStakingCard.tsx#L70)
 
 ### swap 分析
 
 Q: 如何获取交易对
+
 A:`var pool_address = await uniswapFactory.methods.getPair(input_token_address, out_token_address).call();`
 
 Q: uniswap router 上的 swap function 沒有要输入 slippage tolerance， 那如果用 web3 交互应该怎么调这个参数？
+
 A: minOutputAmount，最少也要换到这么多币，slippage tolerance 在发送转账的时候实际上也是被转换成了这个，只是用 slippage 更直观
 
 ### opensea 相关
 
 Q: opeasea 如何点赞？
+
 A: 先签名 login。然后拿到 token，存下来。带上 token ，拼个请求 post 过去就行了。你可以走一遍流程，看看自己签出来的和小狐狸签出来的一样不一样。
 
 ### metamask 自动登录
 
 Q: selenium 怎么让 metamask 来登录的？
+
 A: `Google\ Chrome --remote-debugging-port=9222 --user-data-dir='~/ChromeProfile'`直接用 chrome app 开一个 debug port (即先登录好 metamask，程序再 attach 到浏览器)
+
 A: 点击按钮弹出小狐狸后，可以轮询窗口获取到小狐狸
 
 ### sol 相关
 
 Q: 请教下，solana 中的 uint8 array 格式的私钥， 怎么通过 javascript 变成 sollet， mathwallet 等钱包支持的私钥格式呢？
+
 A: `` const keyOutput = isArrayFormat ? `[${[].slice.call(wallet.provider.account.secretKey)}]` : bs58.encode(wallet.provider.account.secretKey); bs58.encode `` 在一个 solana 钱包的 GitHub issue 看到的。
 
 Q: 话说 solana 上，只是转一下 token，咋这么麻烦？getOrCreateAssociatedAccountInfo， 这都啥玩意？
+
 A: 它的账户体系，是每个代币都有自己的合约地址和收款地址，一开始真的好多人转账出错
 现在是统一账户，但是实际上你转账，是要转给目标账户下跟这个 token 相关的账户
 现在改成 如果你账户里已经生产代币的收款地址 那么就是获取地址转账 如果没有就帮你生成一个 再转账
 你去 explorer 看就知道了，A 转给 B，实际上是 A 地址跟 Token 关联地址转给 B 地址跟 Token 关联的地址。
 所以你看代码，他首先获取了 mint 这个玩意，用它来取得 A 和 B 地址下 跟 token 相关的子地址，然后作为参数去转账的。
+
 A: 我说下 sol 链的理念，按照这个去想，有些事就能想明白了，sol 你把他想成一个 Linux 系统，里面所有的地址就是你系统里的文件，所有信息都是存在不同的地址里的，这些地址生成的 owner 就是文件信息的所有者。按照这个理解，比如你创建了一个钱包地址，这个就是你的 root 身份，你有不同的文件需要存储，对应于 sol 上就是你有多个币需要存放，那就是多个不同的地址，地址由 mintAddress 和你当前的钱包地址计算得出
+
 A: spl 我觉得就像是 sol 官方出的 openzeppelin，很多合约进行标准化了。sol 和各种 token 的转账，都是通过系统内置的一个 program 来转账的。官方提供了很多的 programid，这些就像标准函数库，你就直接构造他们需要的参数直接调他们就行了
 
 ### web3js & ethersjs 相关
 
 与 web3 相比，ethers 执行合约函数极其简单，它封装了很多细节，只需要:
+
 1 实例化合约: `contract = new ethers.Contract(合约地址, 合约 abi, provider);`
+
 2 使用钱包对合约进行签名:
 `contractWithSigner = contract.connect(wallet);`
+
 3 调用合约函数:
 `tx = await contractWithSigner.函数 A(参数 1，参数 2);`
 这样就可以与链上合约进行交互了，进行质押、转账、swap 等。
 不需要像 web3 一样手动设置 from to value data 等交易参数
 
 Q: transfer 和 web3.eth.sendSignedTransaction 还有 methods.myMethod.send 这些有什么区别
+
 A: [sendsignedtransaction](https://web3js.readthedocs.io/en/v1.4.0/web3-eth.html?highlight=sendSignedTransaction#sendsignedtransaction)， 一个是合约内函数，一个是 web3 提供的访问 ethereum 的方法
 
 Q: 有没有计算 gas 的好方法，用 gasEstimate 的结果和 metamask 的不同
+
 A: Metamask 大概乘了个 1.5
 
 Q: 转账出现 invalid sender 错误
+
 A: ethereum-tx 在 bsc 上要自己定义一个 forCustomChain
 
 ### nonce 处理
 
 Q: 如果我有笔交易 nonce 是 1 pending 中，然后又产生一笔交易 nonce 是 2 跟着 pending，如果我这个时候手动指定 nonce 为 1，抬高 gas price，是不是也没法成功冲掉前面两笔交易了？
+
 A: nonce == 1 的交易会成交， 之后 nonce == 2 的交易如果 gas price 够的话 也会跟着成交，evm 链的都是这样的
 
 Q: 在 metamask 里没法发起 nonce 为 1 的交易了，用 web3.py 去发起个交易倒是会提交成功生成 tx hash 但是老是不成功
+
 A: 重新构造一笔交易，和以前的那笔交易数据一致就行，nonce 和卡主的那笔交易一样， gas 提高一点，这样可以覆盖掉前面卡住的交易
 
 Q: 程序批量发了 10 个交易 nonce 在累加。然后一直不上链， 我等了一会以为卡住了。这个时候 我发了一个 高 gas，nonce=第一笔交易，然后卡住的 10 个交易， 瞬间就打出来了。是怎么回事？
+
 A: nonce 必须一次确认 比如现在 10 没确认， 10 后面的 nonce 都不会得到确认。要依次确认，只要第一笔卡住了，后面就都卡住了。相同的 nonce 被覆盖的交易不会消耗 gas，不会上链的。
 
 ## 四、器
@@ -343,12 +369,15 @@ A: nonce 必须一次确认 比如现在 10 没确认， 10 后面的 nonce 都�
 ### React vs Vue
 
 框架只是工具，自己擅长最好
+
 React：1. 海外区块链项目基本都是 react,有很多代码可以参考,比如 uniswap-interface； 2. 岗位需求大； 3. react hooks 上手快
+
 Vue： 1. 包体小，省 CDN 的钱；2. 一看就是国产项目
 
 ### Rust
 
 SOL、ICP、DOT、NEAR 的开发都是用 rust
+
 [学习 rust 的教程](https://serokell.io/blog/learn-rust)
 
 ### Solidity
@@ -356,6 +385,7 @@ SOL、ICP、DOT、NEAR 的开发都是用 rust
 IDE 推荐用 [Remix](https://remix.ethereum.org/)
 
 [Capture the Ether](https://capturetheether.com) 是一个游戏，在这个游戏中，你要入侵以太坊智能合约，以了解安全问题。
+
 辅助参考资料：
 [解答 1](https://cmichel.io/capture-the-ether-solutions/)
 [解答 2](https://www.anquanke.com/post/id/154104#h3-9)
@@ -365,9 +395,12 @@ IDE 推荐用 [Remix](https://remix.ethereum.org/)
 ### flashbots
 
 用来打包交易和避免失败的神器
+
 有群友用来领取私钥被泄露钱包的空投
+
 flashbots 对矿工是有利的，有 80%+的矿池都支持了，有专有的 API
 [文档](https://docs.flashbots.net/flashbots-auction/overview/)
+
 官方制作的手把手教编写 flashbots 发送交易的[视频](https://www.youtube.com/watch?v=1ve1YIpDs_I)
 
 ### 反编译工具
@@ -378,46 +411,60 @@ flashbots 对矿工是有利的，有 80%+的矿池都支持了，有专有的 A
 ### 合约调试
 
 Q: 问一个问题。现在有什么好用的智能合约调试器吗？类似通用 ide 的
+
 A: hardhat 可以打 console.log，还行
+
 Q: 话说除了 remix 这种在线的，合约的开发与编译调试有本地的工具吗？
+
 A: truffle compile
 
 ### VPS
 
 Q: 性价比比较高的服务器商，都有哪些啊，国外的
+
 A: contabo（用国外的邮箱注册、美西最快）、linode、datapacket、hostloc、hetzner
 
 ### 批量转账工具
 
 [disperse.app](https://disperse.app)
-banteg 开发好现成的了，直接用就行
-省很多的 gas，转越多省越多
+banteg 开发好现成的了，直接用就行。省很多的 gas，转越多省越多
+
 去其他链用的话，我就直接拿他的 code 去其他链 deploy 一下，都不需要编译了
 
 ### 指纹浏览器
 
-指纹浏览器就是一个浏览器可以开几百个指纹不一样的独立应用
-自动生成字体，系统语言这些指纹信息的一套环境
+指纹浏览器就是一个浏览器可以开几百个指纹不一样的独立应用，自动生成字体，系统语言这些指纹信息的一套环境
+
 免费的可以试试 Ghostbrowser，免费可以开 3 个 session 好像
+
 刷 coinlist 用 adspower 指纹浏览器，价格还可以，50 刀 200 个号
 
 ### 生产电脑
 
 Q: 想买个 mac，请问大家是推荐 M1 还是 intel 的，主要开发用
+
 A: 前端买 M1 可以，后端用兼容性不行，各种包安装很麻烦。
+
 A: 我是 air，拿 m1 咖啡厅可以待一天
+
 A: 我有 mac 也有 win 的台式机，讲道理，我觉得用起来都差不多，在家台式，出去都是 mbp
 
 ### 邮箱注册
 
 Q: 有什么好用的邮箱， 可以生成很多个子邮箱那种。 大佬求推荐个
+
 A: 这是个简单好用的[邮件转发系统](https://github.com/huan/docker-simple-mail-forwarder)，两行代码就能跑起来，我用这个，注册了一大堆 discord
-A: 用了下谷歌的 adad+无限邮箱 还可以
+
+A: 用了下谷歌的 add+无限邮箱 还可以
+
 A: 直接用谷歌手机注册真实的 gmail 账号、ip 够干净可以无限注册不要手机号
 
 ### 节点服务
 
 节点就那几家有卖的，infura，quicknode，alchemy，ankr，你花钱给他，他给你个节点地址，包括 wss 都有
+
 自己跑节点至少 500-1t 的 ssd，你还很折腾
+
 blocknative 专门做 mempool 的，是贵，但是真的特别及时
-节点服务都很贵 如果量大 自己搭划算一些
+
+节点服务都很贵，如果量大，自己搭划算一些
