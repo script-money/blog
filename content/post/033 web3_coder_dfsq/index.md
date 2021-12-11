@@ -14,7 +14,7 @@ summary: '本文素材来源于CryptoChasers技术社区从 2021 年 5 月底到
 
 “道”是指遵循事物的发展规律，确定自身的发展方向、愿景和战略。
 
-程序员在 Crypto 发展的方向有多个，推荐新入行的程序员阅读[「 程序员入坑 Web3 学习路径」](https://script.money/post/031-programmer_learn_path/)
+程序员在 Crypto 发展的方向有多个，推荐新入行的程序员阅读[「 程序员入坑 Web3 学习路径」](https://script.money/posts/031-programmer_learn_path/)
 
 ### 程序员在币圈可以做的事情
 
@@ -134,7 +134,7 @@ web 风控有查 IP、设备指纹算法、CloudFlare
 
 过设备指纹算法，简单的可以用 chrome 自带的多 profile，可以隔离 cookie，但还是有被检测到的可能。专业的可以用指纹浏览器，每个配置指向不同的代理端口。
 
-CloudFlare 的风控可以使用 cf 自家的 pages 服务，用自己家的矛戳自己家的盾。
+CloudFlare 的风控可以使用 CloudFlare 自家的 pages 服务，用自己家的矛戳自己家的盾。用 Pages 代理走一成流量。
 
 ### 养多号
 
@@ -372,8 +372,8 @@ flashbots 对矿工是有利的，有 80%+的矿池都支持了，有专有的 A
 
 ### 反编译工具
 
-[ida](https://github.com/crytic/ida-evms)
-[ethervm](https://ethervm.io/decompile)
+反编译整个合约 [ethervm](https://ethervm.io/decompile)
+查找函数名 [4byte.directory](https://www.4byte.directory/signatures/)
 
 ### 合约调试
 
