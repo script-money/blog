@@ -1,20 +1,22 @@
 ---
 title: 'StarkNet代码交互流程'
 date: 2022-08-29T23:00:00+08:00
-lastmod: 2022-08-30T01:00:00+08:00
+lastmod: 2022-09-15T021:00:00+08:00
 draft: false
 summary: '介绍如何导出钱包，使用代码来进行测试网交互'
 ---
 
 一些开发类的StarkNet教程教的是创建新的账户、编写新合约和测试。而本文主要介绍如何导出已有钱包账户，并和已经上线的合约进行交互。
 
-## 1. 安装nile初始化项目
+## 1. 初始化nile项目
 
 [nile](https://github.com/OpenZeppelin/nile/) 是 StarkNet 上流行的cli开发工具，能简化流程提高效率。根据[README](https://github.com/OpenZeppelin/cairo-contracts)安装后，确保输入 `nile version` 会显示版本号。
 
-然后新建文件夹，输入`nile init`初始化项目并用`nile compile`编译一下示例合约。
+然后新建文件夹，输入`nile init`初始化项目
 
-## 2. 从钱包导出私钥
+输入`nile compile`编译一下示例合约。compile 后 artifacts 中会出现 json 格式的 ABI 文件。
+
+## 2. 导出私钥
 
 私钥可以本地生成，也可以从钱包导出，重点介绍钱包导出的私钥如何使用。下图分别是argent和braavo的导出位置。
 
@@ -26,7 +28,7 @@ summary: '介绍如何导出钱包，使用代码来进行测试网交互'
 
 ![03 env](./03%20env.png)
 
-然后输入`nile setup PK1 --network goerli`，会在测试网部署一个合约账户，同时根目录会出现一个*goerli.accounts.json*，里面包含PK1这个私钥派生出的公钥和地址。这个新生成的合约地址和之前钱包里的不一样，需**手动替换**成网页钱包的地址。同样还需要替换*goerli.deployments.txt*中的账户合约地址。
+然后输入`nile setup PK1 --network goerli`，会在测试网部署一个合约账户，同时根目录会出现一个 *goerli.accounts.json* ，里面包含PK1这个私钥派生出的公钥和地址。这个新生成的合约地址和之前钱包里的不一样，需 **手动替换** 成网页钱包的地址。同样还需要替换 *goerli.deployments.txt* 中的账户合约地址。
 
 ![04 替换地址](./04%20%E6%9B%BF%E6%8D%A2%E5%9C%B0%E5%9D%80.png)
 
@@ -36,7 +38,7 @@ summary: '介绍如何导出钱包，使用代码来进行测试网交互'
 
 ![05 获取abi](./05%20%E8%8E%B7%E5%8F%96abi.png)
 
-在根目录的 goerli.deployments.txt 下添加 **合约地址:abi路径:alias**，我取的是[starknet-cairo-101](https://github.com/starknet-edu/starknet-cairo-101)的第1个练习，alias写的是ex01。所以goerli.deployments.txt的新增的内容是：`0x29e2801df18d7333da856467c79aa3eb305724db57f386e3456f85d66cbd58b:artifacts/abis/ex01.json:ex01`
+在根目录的 *goerli.deployments.txt* 下添加 **合约地址:abi路径:alias**，我取的是[starknet-cairo-101](https://github.com/starknet-edu/starknet-cairo-101)的第1个练习，alias写的是ex01。所以 *goerli.deployments.txt* 的新增的内容是：`0x29e2801df18d7333da856467c79aa3eb305724db57f386e3456f85d66cbd58b:artifacts/abis/ex01.json:ex01`
 
 ## 4. 发送交易
 
