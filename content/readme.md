@@ -1,15 +1,14 @@
 ---
-title: 'README'
-date: 2021-12-10T17:00:00+08:00
+title: "README"
+date: 2024-01-09T12:00:00+08:00
 ---
 
 ## Link
 
-- Community(discord): [cryptochasers](https://discord.gg/cryptochasers)
 - Email: <hello@script.money>
-- Twitter(私信开放): [scriptdotmoney](https://twitter.com/scriptdotmoney)
+- Twitter: [scriptdotmoney](https://twitter.com/scriptdotmoney)
 - GitHub: [script-money](https://github.com/script-money)
-- Blog: [script.money](https://script.money)
+- Blog: [xlog](https://scriptmoney.xlog.app)
 
 ## Story
 
